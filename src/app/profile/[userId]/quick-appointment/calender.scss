@@ -1,0 +1,103 @@
+.date-picker {
+  width: 100%;
+  padding: 15px;
+  border-left: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+  // border-radius: 5px;
+  background-color: #fff;
+
+  h4 {
+    padding: 1rem 1rem 1.4rem 1rem;
+    color: #333;
+    font-weight: 600;
+  }
+
+  .react-datepicker {
+    width: 100%;
+    border: none;
+  }
+
+  .date-picker .divider {
+    margin: 10px 0;
+    height: 1px;
+    background-color: #ddd;
+  }
+
+  .react-datepicker__navigation--previous {
+    left: 25%;
+  }
+
+  .react-datepicker__navigation--next {
+    right: 25%;
+  }
+
+  .react-datepicker__navigation--previous:hover {
+    background: #f0f7ff;
+    border-radius: 50%;
+  }
+
+  .react-datepicker__navigation--next:hover {
+    background: #f0f7ff;
+    border-radius: 50%;
+  }
+
+  .react-datepicker__day-name,
+  .react-datepicker__day {
+    width: 3rem;
+    height: 3rem;
+    padding: 0.7rem;
+    font-size: 1rem;
+  }
+
+  .react-datepicker__day-name {
+    padding: 0.5rem 0.5rem 0 0.5rem !important;
+  }
+
+  .react-datepicker__day--keyboard-selected,
+  .react-datepicker__day--selected,
+  .react-datepicker__day--selected:hover {
+    border-radius: 50%;
+    background-color: #577361 !important;
+    color: white !important;
+  }
+
+  .react-datepicker__day:not([aria-disabled="true"]):hover {
+    border-radius: 50%;
+  }
+
+  .react-datepicker__header {
+    background: none;
+    border: none;
+  }
+
+  .react-datepicker__month-container {
+    width: 100%;
+  }
+
+  .react-datepicker__current-month {
+    font-size: 1rem !important;
+    margin-bottom: 1rem;
+    font-weight: 600;
+  }
+
+  .react-datepicker__day--highlighted-custom-available {
+    background-color: #f0f7ff;
+    color: #577361;
+    border-radius: 50%;
+  }
+
+  .react-datepicker__day--disabled {
+    color: #ccc !important;
+    pointer-events: none;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .react-datepicker__day-name,
+  .react-datepicker__day {
+    width: 2.3rem !important;
+    height: 2.3rem !important;
+    padding: 0.3rem !important;
+    font-size: 1rem;
+  }
+}

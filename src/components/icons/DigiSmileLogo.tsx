@@ -1,8 +1,8 @@
-"use client";
-import React from "react";
-import { Box } from "@mui/material";
-import Image from "next/image";
-import { digismileLogoImage } from "@/assets/images";
+'use client';
+import React from 'react';
+import Image from 'next/image';
+import { digismileLogoImage } from '@/assets/images';
+import { Box } from '@chakra-ui/react';
 
 interface LogoProps {
   width?: string;
@@ -11,9 +11,9 @@ interface LogoProps {
 }
 
 const DigiSmileLogo: React.FC<LogoProps> = ({
-  width = "100px",
-  height = "100px",
-  className = "",
+  width = '100px',
+  height = '100px',
+  className = '',
 }) => {
   return (
     <Box
@@ -22,9 +22,9 @@ const DigiSmileLogo: React.FC<LogoProps> = ({
     >
       <Image
         src={digismileLogoImage}
-        alt={"digismile logo"}
+        alt={'digismile logo'}
         className="object-contain"
-        style={{ maxWidth: "100%", maxHeight: "100%" }}
+        style={{ maxWidth: '100%', maxHeight: '100%' }}
       />
     </Box>
   );

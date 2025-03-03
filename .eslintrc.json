@@ -3,5 +3,21 @@
   "plugins": ["sonarjs"],
   "globals": {
     "JSX": "readonly"
+  },
+  "rules": {
+    "no-debugger": "error",
+    "no-unused-vars": "off",
+    "import/no-anonymous-default-export": [
+      "error",
+      {
+        "allowArray": true,
+        "allowArrowFunction": false,
+        "allowAnonymousClass": false,
+        "allowAnonymousFunction": false,
+        "allowCallExpression": true,
+        "allowLiteral": true,
+        "allowObject": true
+      }
+    ]
   }
 }

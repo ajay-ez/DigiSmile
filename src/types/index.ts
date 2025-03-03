@@ -3,11 +3,25 @@ export interface LoginFormValues {
   password: string;
 }
 
+export interface ForgotPasswordValues {
+  new_password: string;
+  old_password: string;
+}
+
+export interface MedicalRecordsValues {
+  date: string;
+  document: string;
+  email: string;
+  prescription: string;
+  problem: string;
+}
+
 export interface SignupFormValues extends LoginFormValues {
-  name: string;
-  dob: string;
+  first_name: string;
+  last_name: string;
+  date_of_birth: string;
   address: string;
-  phoneNumber: string;
-  confirmPassword: string;
+  phone_number: string;
+  confirmPassword?: string;
   problem: string;
 }

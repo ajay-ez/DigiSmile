@@ -1,39 +1,38 @@
 import React from "react";
-import ServiceExplore from "@/components/common/ServiceExplore";
-import { pediatric_dentis, root_canal, tooth_whitening } from "@/assets/images";
-import { Box, Typography } from "@mui/material";
+
+import projectConstants from "@/projectContants";
+import ServiceCard from "../services/ServiceCard";
+import Slider from "react-slick";
+import { settings } from "./Gallery";
 
 const Services = () => {
   return (
-    <div className=" bg-digiWhiteGray p-3">
-      <Typography
-        variant="h3"
-        className="text-center bg-digiWhiteGray p-3 font-bold"
-      >
+    <div className="bg-blue-white-gradient pb-8">
+      <h1 className="text-center p-3 font-bold">
         Our Services
-      </Typography>
-      <Typography className="text-center m-2 font-medium">
-        Comprehensive Services for
-        <span className="text-digiRed"> Optimal Oral Health.</span>
-      </Typography>
-      <Box className="flex" gap={4}>
-        <ServiceExplore alt="service 1" image={root_canal} title="Root canal" />
-        <ServiceExplore
-          alt="service 1"
-          image={tooth_whitening}
-          title="Tooth whitening "
-        />
-        <ServiceExplore
-          alt="service 1"
-          image={pediatric_dentis}
-          title="Pediatric-dentistry"
-        />
-      </Box>
-      <Typography className="font-medium text-center mt-2">
-        Our state-of-the-art facilities are equipped with the
-        <span className="text-digiRed"> latest technology </span>
-        to ensure optimal care for both children and adults
-      </Typography>
+      </h1>
+      <h1 className="text-center m-2 font-poppins ">
+        Comprehensive Services for Optimal Oral Health.
+      </h1>
+      <div className="   p-4">
+        <Slider {...settings} className="relative">
+          {projectConstants.clinicService.map((service) => (
+            <div key={service.alt} className="p-4">
+              <ServiceCard
+                title={service.title}
+                desc={service.desc}
+                image={service.image}
+                alt={service.alt}
+              />
+            </div>
+          ))}
+        </Slider>
+      </div>
+      <h1 className="font-semibold text-center mt-24">
+        Our state-of-the-art facilities are equipped with the latest technology
+        to <br />
+        ensure optimal care for both children and adults
+      </h1>
     </div>
   );
 };

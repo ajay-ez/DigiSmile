@@ -1,8 +1,8 @@
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import FieldInput from "@/components/common/FieldInput";
-import { Box, Button, Typography } from "@mui/material";
 import { emailValidation, requiredCharField } from "@/validations";
+import { Box, Button } from "@chakra-ui/react";
 
 const validationSchema = Yup.object({
   name: requiredCharField("Name"),
@@ -10,19 +10,18 @@ const validationSchema = Yup.object({
   message: Yup.string()
     .trim()
     .min(10, "Message must be at least 10 characters long")
-    .required("Message is required"),
+    .required("Message is required")
 });
 
 const initialValues = {
   name: "",
   email: "",
-  message: "",
+  message: ""
 };
 
 const ContactUsForm = () => {
-  const handleSubmit = (values: any) => {
-    console.log(values);
-  };
+  // eslint-disable-next-line no-unused-vars
+  const handleSubmit = (values: any) => {};
 
   return (
     <Formik
@@ -33,9 +32,9 @@ const ContactUsForm = () => {
       {() => (
         <Form>
           <Box mb={2}>
-            <Typography variant="h5" className="text-center">
+            <h1 className="text-center">
               Send Us a Message
-            </Typography>
+            </h1>
           </Box>
           <Box mb={2}>
             <FieldInput label="Name" name="name" type="text" required />
@@ -62,7 +61,7 @@ const ContactUsForm = () => {
                       padding: "10px",
                       borderRadius: "8px",
                       border: "1px solid #ccc",
-                      fontSize: "16px",
+                      fontSize: "16px"
                     }}
                   />
                   <ErrorMessage
@@ -76,7 +75,7 @@ const ContactUsForm = () => {
           </Box>
 
           <Button
-            fullWidth
+            // fullWidth
             className="bg-digiSkyBlue text-lg text-white rounded-lg p-2 px-8 capitalize hover:bg-blue-500"
             type="submit"
           >

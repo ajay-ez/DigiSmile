@@ -11,7 +11,7 @@ export const passwordValidation = Yup.string()
 export const requiredCharField = (fieldName: string) =>
   Yup.string()
     .trim()
-    .min(3, `${fieldName} must be at least 3 characters long`)
+    .min(2, `${fieldName} must be at least 3 characters long`)
     .required(`${fieldName} is required`);
 
 export const contactNumberValidation = Yup.string()
@@ -19,5 +19,5 @@ export const contactNumberValidation = Yup.string()
   .required("Contact number is required");
 
 export const booleanValidation = Yup.boolean()
-  .oneOf([true], "You must accept this option")
+  .oneOf([true], "You must accept this")
   .required("This field is required");

@@ -2,9 +2,9 @@ import {
   signup_bottom_left,
   signup_top_left,
   signup_top_right,
-  signup_teeth,
+  signup_teeth
 } from "@/assets/images";
-import { Container } from "@mui/material";
+import { Container } from "@chakra-ui/react";
 import Image from "next/image";
 import React from "react";
 
@@ -15,11 +15,11 @@ interface Properties {
 const SignupContainer = ({ children }: Properties) => {
   return (
     <div className="relative bg-signup-gradient min-h-screen flex justify-center items-center overflow-hidden">
-      <div className="absolute -top-9 -left-9 p-4 z-0">
+      <div className="hidden md:absolute md:block -top-9 -left-9 p-4 z-0">
         <Image height={200} width={200} src={signup_top_left} alt="Image 1" />
       </div>
 
-      <div className="absolute top-0 right-0 p-4 z-0">
+      <div className="hidden md:absolute md:block top-0 right-0 p-4 z-0">
         <Image height={200} width={200} src={signup_top_right} alt="Image 2" />
       </div>
 
@@ -27,7 +27,7 @@ const SignupContainer = ({ children }: Properties) => {
         <div>{children}</div>
       </Container>
 
-      <div className="absolute bottom-0 left-0 p-4 z-0">
+      <div className="hidden md:absolute md:block bottom-0 left-0 p-4 z-0">
         <Image
           height={200}
           width={200}
@@ -36,7 +36,7 @@ const SignupContainer = ({ children }: Properties) => {
         />
       </div>
 
-      <div className="absolute bottom-0 right-0 p-4 z-0">
+      <div className="hidden md:absolute md:block bottom-0 right-0 p-4 z-0">
         <Image height={200} width={200} src={signup_teeth} alt="Image 4" />
       </div>
     </div>

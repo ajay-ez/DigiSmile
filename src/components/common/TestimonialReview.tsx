@@ -1,7 +1,7 @@
 // components/Testimonial.tsx
 import React from "react";
-import { Card, CardContent, Typography, Box } from "@mui/material";
-import Image, { StaticImageData } from "next/image";
+import { StaticImageData } from "next/image";
+import { Box, Card } from "@chakra-ui/react";
 
 interface TestimonialProps {
   username: string;
@@ -12,38 +12,38 @@ interface TestimonialProps {
 
 const TestimonialReview: React.FC<TestimonialProps> = ({
   username,
-  userImage,
   profession,
-  review,
+  review
 }) => {
   return (
-    <Card className="max-w-md mx-auto mb-4 shadow-lg">
-      <CardContent>
+    <Card className="max-w-md mx-auto mb-4 shadow-lg rounded-2xl p-4 h-[350px]">
+      {/* <CardContent> */}
         <Box className="flex items-center">
-          <Image
+          {/* <Image
             src={userImage}
             alt={username}
             className="w-16 h-16 mr-4 rounded-full"
-          />
+          /> */}
           <Box>
-            <Typography variant="h6" component="div" className="font-atkinson">
+            <h1
+              className="font-atkinson"
+            >
               {username}
-            </Typography>
-            <Typography
-              variant="body2"
+            </h1>
+            <h1
               color="textSecondary"
               className="font-atkinson"
             >
               {profession}
-            </Typography>
+            </h1>
           </Box>
         </Box>
         <div>
-          <Typography variant="body1" className="mt-2 font-atkinson ">
+          <h1 className="mt-2 font-atkinson ">
             {review}
-          </Typography>
+          </h1>
         </div>
-      </CardContent>
+      {/* </CardContent> */}
     </Card>
   );
 };

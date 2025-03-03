@@ -1,0 +1,98 @@
+.comparison-slider {
+  position: relative;
+  overflow: hidden;
+  user-select: none;
+  width: 400px;
+  height: 250px;
+  img {
+    width: 100%;
+    height: auto;
+    vertical-align: middle;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+    pointer-events: none;
+  }
+
+  &:hover:not(.handle) {
+    cursor: pointer;
+  }
+
+  .comparison-item {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 400px;
+    height: 250px;
+    overflow: hidden;
+  }
+
+  .comparison-item.top {
+    z-index: 2;
+    top: 0;
+    left: 0;
+    width: 400px;
+    height: 250px;
+  }
+  .handle {
+    position: absolute;
+    left: 1rem;
+    height: 100%;
+    width: 40px;
+    z-index: 3;
+    cursor: col-resize;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    img {
+      width: 40px;
+      height: 40px;
+      pointer-events: none;
+      background: #faf7f5;
+      position: absolute;
+      border-radius: 50%;
+      padding: 5px;
+    }
+
+    .handle-shadow {
+      height: 100%;
+      width: 3px;
+      background: #faf7f5;
+    }
+  }
+
+  .comparison-image {
+    width: 400px;
+    height: 250px;
+  }
+}
+
+@media screen and (max-width: 1386px) {
+  .comparison-slider {
+    width: 300px !important;
+  }
+  .comparison-item {
+    width: 300px !important;
+  }
+  .comparison-item.top {
+    width: 300px !important;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .comparison-slider {
+    height: 300px !important;
+    width: 100% !important;
+  }
+  .comparison-item {
+    height: 300px !important;
+    width: 100% !important;
+  }
+  .comparison-item.top {
+    height: 300px !important;
+    width: 100% !important;
+  }
+}

@@ -1,4 +1,4 @@
-import { Box, FormLabel, TextField } from "@mui/material";
+import { Box, FormLabel } from "@chakra-ui/react";
 import { Field, ErrorMessage } from "formik";
 import React from "react";
 
@@ -24,20 +24,17 @@ const FieldInput = ({
   return (
     <Box width="100%">
       <FormLabel
+        className="text-digiDarkBlue"
         sx={{
-          color: "#000 !important",
           fontWeight: 600,
-          fontSize: "16px"
-          // "& .MuiFormLabel-asterisk": { color: "#F39200" },
-          // "&.Mui-focused": { color: "#000" },
-          // "&.Mui-error": { color: "#d32f2f" },
+          fontSize: "1rem"
         }}
       >
         {label}
         {required && <span className="text-red-500"> *</span>}
       </FormLabel>
       <Box mt={1}>
-        <Field name={name}>
+        {/* <Field name={name}>
           {({ field }: { field: any; meta: any }) => (
             <TextField
               {...field}
@@ -62,7 +59,7 @@ const FieldInput = ({
               }}
             />
           )}
-        </Field>
+        </Field> */}
         <ErrorMessage
           name={name}
           component="div"
