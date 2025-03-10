@@ -47,15 +47,15 @@ const NewPatientsPage = () => {
           width={"100%"}
         >
           <Text className="heading" textAlign={"center"}>
-            Welcome to DigiSmile - Your Hometown Dental Care!
+            Welcome to Smile Experts Dental - Your Hometown Dental Care!
           </Text>
           <Text mt={8} as={"h4"}>
-            Thank you for visiting our website! At DigiSmile, we are excited to
-            welcome new patients and ensure that you feel empowered, safe, and
-            valued during your first visit. Our goal is to build trust and
-            provide exceptional dental care for you and your family in a
+            Thank you for visiting our website! At Smile Experts Dental, we are
+            excited to welcome new patients and ensure that you feel empowered,
+            safe, and valued during your first visit. Our goal is to build trust
+            and provide exceptional dental care for you and your family in a
             comfortable, modern environment. We are proud to be your go-to
-            dental office in Belleville and surrounding areas.
+            dental office in Burke and Washington areas.
           </Text>
           <Text
             as={"h2"}
@@ -87,7 +87,7 @@ const NewPatientsPage = () => {
             Compassionate Care, Fair Prices
           </Text>
           <Text as={"h4"} textAlign={"center"}>
-            At DigiSmile, we believe that dental care should be both
+            At Smile Experts Dental, we believe that dental care should be both
             compassionate and affordable. We are committed to providing
             high-quality services at prices that are accessible to everyone. Our
             fees are typically below the regional average to make sure that cost
@@ -105,9 +105,9 @@ const NewPatientsPage = () => {
             We Accept Most Insurances
           </Text>
           <Text as={"h4"} textAlign={"center"}>
-            DigiSmile is proud to accept most dental insurances, including
-            Healthy Michigan Plans, making it easier for you to receive the care
-            you deserve.
+            Smile Experts Dental is proud to accept most dental insurances,
+            including Healthy Michigan Plans, making it easier for you to
+            receive the care you deserve.
           </Text>
           <Text as={"h4"} mt={4}>
             Usually, treatment can be done or started on the <b>same day</b> as
@@ -148,9 +148,9 @@ const NewPatientsPage = () => {
             Special Offers for New Patients
           </Text>
           <Text as={"h4"} textAlign={"center"}>
-            To welcome you to DigiSmile, we offer ongoing special deals and
-            discounts for new patients. We want to make sure that your dental
-            journey with us is as affordable as possible!
+            To welcome you to Smile Experts Dental, we offer ongoing special
+            deals and discounts for new patients. We want to make sure that your
+            dental journey with us is as affordable as possible!
           </Text>
           <Text
             as={"h2"}

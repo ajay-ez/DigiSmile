@@ -18,7 +18,7 @@ const MissionComponent = () => {
         </Flex>
         <Text as={"h4"} fontSize={"21px !important"}>
           Time for a dental cleaning? Need a crown, root canal, or dental
-          implant? Dr. Morgan, Dr. Hubbard, and our team of orthodontists, oral
+          implant? Dr. Andleeb Mahmood, and our team of orthodontists, oral
           surgeons, and periodontists offer all the dental services you could
           ever need to keep your family healthy and smiling.
         </Text>
