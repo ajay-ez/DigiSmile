@@ -3,6 +3,7 @@
 import {
   excellence,
   handshake,
+  mahmoodImage,
   mindfull,
   teeth1,
   transparency
@@ -61,7 +62,7 @@ const AboutUsComponent = () => {
             What we’re striving for
           </Text>
           <Text as={"h3"} mt={8} color={"brand.100"}>
-            At Smile Experts Dental Studio, nothing is more important than the
+            At Smile Experts Dental Clinic, nothing is more important than the
             highest quality of care. Since day one, we have been committed to
             our values so each of our patients can rest assured they are in good
             hands.
@@ -177,7 +178,7 @@ const AboutUsComponent = () => {
             alignItems={"center"}
             justifyContent={"center"}
           >
-            <Image src={teeth1} alt=""></Image>
+            <Image src={mahmoodImage} height={400} width={400} alt=""></Image>
             <Flex flexDir={"column"} gap={8}>
               <Text className="heading">Our founders story</Text>
               <Text as={"h4"}>
@@ -227,17 +228,17 @@ const AboutUsComponent = () => {
                       {isExpanded ? <FaMinus /> : <FaPlus />}
                     </AccordionButton>
                     <AccordionPanel pb={4}>
-                      At The Gleamery, our Hygienists are the star of the show.
-                      In a world traditionally dominated by dentists, we&apos;re
-                      turning the model on its head, bringing the spotlight to
-                      these dental experts. Consider them your counterpart on
-                      your smile-care journey, someone who will get to know your
-                      mouth and develop customized plans around your goals,
-                      lifestyle, and comfort. This isn&apos;t a quick hi and
-                      bye&apos; interaction, this is someone who will support
-                      you at every visit and for the long haul. Without them,
-                      there is no us. And bonus: seeing them more means seeing
-                      your dentist less (wink wink).
+                      At The Smile Experts Dental Clinic, our Hygienists are the
+                      star of the show. In a world traditionally dominated by
+                      dentists, we&apos;re turning the model on its head,
+                      bringing the spotlight to these dental experts. Consider
+                      them your counterpart on your smile-care journey, someone
+                      who will get to know your mouth and develop customized
+                      plans around your goals, lifestyle, and comfort. This
+                      isn&apos;t a quick hi and bye&apos; interaction, this is
+                      someone who will support you at every visit and for the
+                      long haul. Without them, there is no us. And bonus: seeing
+                      them more means seeing your dentist less (wink wink).
                     </AccordionPanel>
                   </>
                 )}
@@ -257,9 +258,7 @@ const AboutUsComponent = () => {
                       We bridge the gap between preventative health and highly
                       effective treatments to ensure an unparalleled experience
                       you&apos;re sure to come back to time and time again.
-                      That&apos;s why we lead with innovative offerings, The
-                      Gleamery Whitening System and AirFlow cleanings to enrich
-                      your health, wellness and experience
+                      That&apos;s why we lead with innovative offerings.
                     </AccordionPanel>
                   </>
                 )}
@@ -279,18 +278,18 @@ const AboutUsComponent = () => {
                       time to time). But when you cut through the gimmicks and
                       marketing ploys, you&apos;ll find that white teeth
                       actually start with the foundation of a healthy smile. As
-                      our founder Dr. Tina says, “You would never get your car
-                      waxed without first getting it cleaned” - the same applies
-                      to our teeth. After diligent research, we identified an
-                      innovative method that leverages the dentist-designed Glo
-                      Pro Power technology. In one customized treatment
-                      administered by our expert Hygienists, you will garner the
-                      natural results you deserve (cue: satisfaction
-                      guaranteed), with zero hassle. Our customized plans are
-                      built around your personal needs and habits (such as
-                      smoking, drinking wine/coffee, and perio health), and
-                      ensure that you are safely guided and properly taken care
-                      of during the whitening process.
+                      our founder Dr. Mahmood says, “You would never get your
+                      car waxed without first getting it cleaned” - the same
+                      applies to our teeth. After diligent research, we
+                      identified an innovative method that leverages the
+                      dentist-designed Glo Pro Power technology. In one
+                      customized treatment administered by our expert
+                      Hygienists, you will garner the natural results you
+                      deserve (cue: satisfaction guaranteed), with zero hassle.
+                      Our customized plans are built around your personal needs
+                      and habits (such as smoking, drinking wine/coffee, and
+                      perio health), and ensure that you are safely guided and
+                      properly taken care of during the whitening process.
                     </AccordionPanel>
                   </>
                 )}

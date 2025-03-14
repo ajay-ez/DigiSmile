@@ -55,6 +55,7 @@ import teeth4 from "@/assets/teeths/4.svg";
 import teeth5 from "@/assets/teeths/5.svg";
 import teeth6 from "@/assets/teeths/6.svg";
 import slider from "@/assets/utils/slider.png";
+import mahmoodImage from "@/assets/utils/mahmood.jpg";
 
 import sidebar_profile from "@/assets/sidebar/profile.png";
 import sidebar_appointment from "@/assets/sidebar/appointment.png";
@@ -146,6 +147,7 @@ export {
   dummy_profile,
   dr_image,
   faq,
+  mahmoodImage,
   gallery_1,
   gallery_2,
   gallery_3,
