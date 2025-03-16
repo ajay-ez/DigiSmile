@@ -40,8 +40,6 @@ const LoginPage = () => {
     setSubmitting: (data: boolean) => void
   ) => {
     userLogin(values).then((response: any) => {
-      console.log("response", response);
-
       if (response?.data?.status_code === 200) {
         dispatch(
           showToastWithTimeout({

@@ -36,7 +36,6 @@ const ForgotPasswordPage = () => {
     setSubmitting: (data: boolean) => void
   ) => {
     const response = await forgotPasswordAction({ values });
-    console.log("response", response);
     // if (response.error) {
     //   dispatch(
     //     showToastWithTimeout({

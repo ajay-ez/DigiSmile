@@ -35,7 +35,6 @@ const LoginPage = () => {
   ) => {
     const authToken = localStorage.getItem("authToken");
     const response = await changePasswordAction({ ...values, authToken });
-    console.log("response", response);
 
     if (response?.success) {
       dispatch(

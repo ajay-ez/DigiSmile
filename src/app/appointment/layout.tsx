@@ -25,16 +25,15 @@ const ProfileLayout = ({ children }: { children: React.ReactNode }) => {
   const dispath: AppDispatch = useDispatch();
 
   const handleTabClick = (item: any, isMobile: boolean) => {
-    handleRedirect(item.url, item.id);
+    handleRedirect(item.url);
     setSelectedTab({ id: item.id, name: item.name, url: item.url });
     if (isMobile) {
       dispath(toggleSideBar(false));
     }
   };
 
-  const handleRedirect = (url: string, id: string) => {
-    const userId = localStorage.getItem("userId");
-    router.push(`/profile/${userId}/${url}?tabId=${id}`);
+  const handleRedirect = (url: string) => {
+    router.push(url);
   };
 
   const handleMenuClick = () => {

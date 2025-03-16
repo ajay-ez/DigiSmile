@@ -82,24 +82,23 @@ const BookAppointment = () => {
     // eslint-disable-next-line no-unused-vars
     setSubmitting: (data: boolean) => void
   ) => {
-    console.log(values);
-    // const response = await BookAppointmentAction(values);
-    // console.log("response", response);
-    // if (response.error) {
-    //   dispatch(
-    //     showToastWithTimeout({
-    //       message: response.error.data.message,
-    //       status: "error"
-    //     })
-    //   );
-    // } else {
-    //   dispatch(
-    //     showToastWithTimeout({
-    //       message: response.data.message || "Success",
-    //       status: "success"
-    //     })
-    //   );
-    // }
+    const response = await BookAppointmentAction(values);
+    if (response.error) {
+      dispatch(
+        showToastWithTimeout({
+          message: response.error,
+          status: "error"
+        })
+      );
+    } else {
+      dispatch(
+        showToastWithTimeout({
+          message: response.data.message || "Success",
+          status: "success"
+        })
+      );
+    }
+    setSubmitting(false);
   };
 
   return (
