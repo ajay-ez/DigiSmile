@@ -18,7 +18,7 @@ import DatePicker from "react-datepicker";
 import { useEffect, useState } from "react";
 import moment from "moment";
 import {
-  BookAppointmentAction,
+  BookQuickAppointmentAction,
   fetchAvailableAppointments,
   RescheduleAppointmentAction
 } from "@/app/actions/appointmentAction";
@@ -84,7 +84,7 @@ const QuickAppointment = () => {
       }
     } else {
       delete values.city;
-      const response = await BookAppointmentAction(
+      const response = await BookQuickAppointmentAction(
         values,
         localStorage.getItem("authToken")
       );
@@ -148,11 +148,6 @@ const QuickAppointment = () => {
     setSelectedDate(date);
   };
 
-  // const slotText = (location: string, date: string) => {
-  //   if(location === 'dc'){}
-  //   else if(location === 'burke'){}
-  // }
-
   return (
     <Box>
       <Formik
@@ -203,39 +198,39 @@ const QuickAppointment = () => {
                   options={[
                     {
                       label: "Complete Exam",
-                      value: "Complete Exam"
+                      value: "complete_exam"
                     },
                     {
                       label: "Regular Cleaning",
-                      value: "Regular Cleaning"
+                      value: "regular_cleaning"
                     },
                     {
                       label: "Crown",
-                      value: "Crown"
+                      value: "crown"
                     },
                     {
                       label: "Filling",
-                      value: "Filling"
+                      value: "filling"
                     },
                     {
                       label: "Pain/Problem",
-                      value: "Pain/Problem"
+                      value: "pain_problem"
                     },
                     {
                       label: "Tooth Repair",
-                      value: "Tooth Repair"
+                      value: "tooth_repair"
                     },
                     {
                       label: "Teeth Whitening",
-                      value: "Teeth Whitening"
+                      value: "teeth_whitening"
                     },
                     {
                       label: "Veeners",
-                      value: "Veeners"
+                      value: "veeners"
                     },
                     {
                       label: "Others",
-                      value: "Others"
+                      value: "others"
                     }
                   ]}
                   placeholder="Select option"

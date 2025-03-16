@@ -96,3 +96,42 @@ export const sidebarData: {
     permission: "doctor"
   }
 ];
+
+export const appointmentLists = [
+  {
+    id: "0",
+    name: "Home",
+    url: "/home",
+    component: RemoveIconComponent
+  },
+  {
+    id: "1",
+    name: "About us",
+    url: "/home/about-us",
+    component: RemoveIconComponent
+  },
+  {
+    id: "2",
+    name: "Services",
+    url: "/home/clinic-services",
+    component: RemoveIconComponent
+  },
+  {
+    id: "3",
+    name: "Sign Up",
+    url: "/auth/signup",
+    component: RemoveIconComponent
+  },
+  {
+    id: "4",
+    name: "Sign In",
+    url: "/auth/login",
+    component: RemoveIconComponent
+  },
+  {
+    id: "5",
+    name: "Appointment",
+    url: "/appointment",
+    component: RemoveIconComponent
+  }
+];

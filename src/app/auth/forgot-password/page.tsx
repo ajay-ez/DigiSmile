@@ -2,8 +2,7 @@
 
 import React from "react";
 import { Formik, Form } from "formik";
-import { LoginFormValues } from "@/types";
-import { useLoginMutation } from "@/services/apiServices/authService";
+import { ForgotPasswordValues } from "@/types";
 import useAuthToken from "@/hooks/useAuthToken";
 import { useRouter } from "next/navigation";
 import {
@@ -15,56 +14,70 @@ import {
   useMediaQuery
 } from "@chakra-ui/react";
 import FormField from "@/components/common/FormField";
-import PasswordField from "@/components/common/PasswordField";
 import { AppDispatch } from "@/redux/store";
 import { useDispatch } from "react-redux";
-import { showToastWithTimeout } from "@/redux/SharedSlice";
-import { LoginSchema } from "@/validations/schema/AuthSchema";
+import { ForgotPasswordSchema } from "@/validations/schema/AuthSchema";
 import Image from "next/image";
 import { digismileLogoImage } from "@/assets/images";
+import { forgotPasswordAction } from "@/app/actions/authAction";
+import { showToastWithTimeout } from "@/redux/SharedSlice";
 
-const initialLoginValues: LoginFormValues = {
-  email: "",
-  password: ""
+const initialForgotValues: ForgotPasswordValues = {
+  email: ""
 };
 
-const LoginPage = () => {
-  const [userLogin, { error }] = useLoginMutation();
+const ForgotPasswordPage = () => {
   const router = useRouter();
-  const { setAuthToken } = useAuthToken();
   const dispatch: AppDispatch = useDispatch();
   const [isMobile] = useMediaQuery("(max-width: 860px)");
 
-  const handleLogin = async (
-    values: LoginFormValues,
+  const handlePasswordChange = async (
+    values: ForgotPasswordValues,
     setSubmitting: (data: boolean) => void
   ) => {
-    userLogin(values).then((response: any) => {
-      console.log("response", response);
+    const response = await forgotPasswordAction({ values });
+    console.log("response", response);
+    // if (response.error) {
+    //   dispatch(
+    //     showToastWithTimeout({
+    //       message: response.error || "Internal server error",
+    //       status: "error"
+    //     })
+    //   );
+    // } else {
+    //   dispatch(
+    //     showToastWithTimeout({
+    //       message: response.data.message || "Success",
+    //       status: "success"
+    //     })
+    //   );
+    // }
+    setSubmitting(false);
 
-      if (response?.data?.status_code === 200) {
-        dispatch(
-          showToastWithTimeout({
-            message: "Successfully logged in",
-            status: "success"
-          })
-        );
-        setAuthToken(response.data);
-        setTimeout(() => {
-          router.push(
-            `/profile/${localStorage.getItem("userId")}/quick-appointment?tabId=1`
-          );
-        }, 100);
-      } else {
-        dispatch(
-          showToastWithTimeout({
-            message: response.error.data.message || "Something went wrong",
-            status: "error"
-          })
-        );
-      }
-      setSubmitting(false);
-    });
+    // userLogin(values).then((response: any) => {
+    //   if (response?.data?.status_code === 200) {
+    //     dispatch(
+    //       showToastWithTimeout({
+    //         message: "Successfully logged in",
+    //         status: "success"
+    //       })
+    //     );
+    //     setAuthToken(response.data);
+    //     setTimeout(() => {
+    //       router.push(
+    //         `/profile/${localStorage.getItem("userId")}/quick-appointment?tabId=1`
+    //       );
+    //     }, 100);
+    //   } else {
+    //     dispatch(
+    //       showToastWithTimeout({
+    //         message: response.error.data.message || "Something went wrong",
+    //         status: "error"
+    //       })
+    //     );
+    //   }
+    //   setSubmitting(false);
+    // });
   };
 
   return (
@@ -132,7 +145,7 @@ const LoginPage = () => {
             fontWeight={800}
             color={"black"}
           >
-            Sign In
+            Forgot Password
           </Text>
           <Flex
             zIndex="2"
@@ -145,10 +158,10 @@ const LoginPage = () => {
             mb={{ base: "20px", md: "auto" }}
           >
             <Formik
-              initialValues={initialLoginValues}
-              validationSchema={LoginSchema}
+              initialValues={initialForgotValues}
+              validationSchema={ForgotPasswordSchema}
               onSubmit={(form, { setSubmitting }) => {
-                handleLogin(form, setSubmitting);
+                handlePasswordChange(form, setSubmitting);
               }}
             >
               {({ errors, touched, isSubmitting }: any) => (
@@ -163,53 +176,26 @@ const LoginPage = () => {
                     touched={touched.email}
                     styles={{ marginBottom: "1.5rem" }}
                   />
-                  <PasswordField
-                    label="Password*"
-                    name="password"
-                    placeholder="Min. 8 characters"
-                    disabled={isSubmitting}
-                    error={errors.password}
-                    touched={touched.password}
-                    styles={{ marginBottom: "1.5rem" }}
-                  />
                   <Button
                     type="submit"
                     variant="authentication"
                     w="100%"
                     isDisabled={isSubmitting}
                   >
-                    Sign In {isSubmitting && <Spinner ml={"4"} />}
+                    Submit {isSubmitting && <Spinner ml={"4"} />}
                   </Button>
-                  <Flex
-                    justifyContent={"space-between"}
-                    alignItems={"center"}
-                    flexDir={"column"}
+                  <Text
+                    pointerEvents={isSubmitting ? "none" : "auto"}
+                    mt={2}
+                    as={"h5"}
+                    textAlign={"center"}
+                    cursor={"pointer"}
+                    onClick={() => {
+                      router.push("/auth/login");
+                    }}
                   >
-                    <Text
-                      pointerEvents={isSubmitting ? "none" : "auto"}
-                      mt={2}
-                      as={"h5"}
-                      textAlign={"center"}
-                      cursor={"pointer"}
-                      onClick={() => {
-                        router.push("/auth/signup");
-                      }}
-                    >
-                      Don&apos;t have an account? Sign UP
-                    </Text>
-                    <Text
-                      pointerEvents={isSubmitting ? "none" : "auto"}
-                      mt={2}
-                      as={"h5"}
-                      textAlign={"center"}
-                      cursor={"pointer"}
-                      onClick={() => {
-                        router.push("/auth/forgot-password");
-                      }}
-                    >
-                      Forgot Password?
-                    </Text>
-                  </Flex>
+                    Already have an account? Login
+                  </Text>
                 </Form>
               )}
             </Formik>
@@ -220,4 +206,4 @@ const LoginPage = () => {
   );
 };
 
-export default LoginPage;
+export default ForgotPasswordPage;

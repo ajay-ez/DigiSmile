@@ -3,9 +3,13 @@ export interface LoginFormValues {
   password: string;
 }
 
-export interface ForgotPasswordValues {
+export interface ChangePasswordValues {
   new_password: string;
   old_password: string;
+}
+
+export interface ForgotPasswordValues {
+  email: string;
 }
 
 export interface MedicalRecordsValues {

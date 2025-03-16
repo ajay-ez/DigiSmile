@@ -2,7 +2,7 @@
 
 import React from "react";
 import { Formik, Form } from "formik";
-import { ForgotPasswordValues, MedicalRecordsValues } from "@/types";
+import { MedicalRecordsValues } from "@/types";
 import { Box, Button, Flex, Spinner, useMediaQuery } from "@chakra-ui/react";
 import {
   ChangePasswordSchema,

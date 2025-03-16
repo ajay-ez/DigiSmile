@@ -119,7 +119,10 @@ export const cancelAppointment = async (appointment_id: any) => {
   }
 };
 
-export const BookAppointmentAction = async (payload: any, authToken: any) => {
+export const BookQuickAppointmentAction = async (
+  payload: any,
+  authToken: any
+) => {
   try {
     const apiResponse = await fetch(
       `${process.env.NEXT_PUBLIC_API_BASE_URL}/book_appointment_existing_user`,
@@ -128,6 +131,28 @@ export const BookAppointmentAction = async (payload: any, authToken: any) => {
         headers: {
           "Content-Type": "application/json",
           Authorization: `${authToken}`
+        },
+        body: JSON.stringify(payload)
+      }
+    );
+    const jsonResponse = await apiResponse.json();
+
+    if (apiResponse.status !== 201) throw jsonResponse;
+
+    return { success: true, data: jsonResponse };
+  } catch (error: any) {
+    return { success: false, error: error.message };
+  }
+};
+
+export const BookAppointmentAction = async (payload: any) => {
+  try {
+    const apiResponse = await fetch(
+      `${process.env.NEXT_PUBLIC_API_BASE_URL}/new_user_appointment`,
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
         },
         body: JSON.stringify(payload)
       }

@@ -51,7 +51,7 @@ const SignupPage = () => {
       if (response.error) {
         dispatch(
           showToastWithTimeout({
-            message: response.error.data.message || "Successfully logged in",
+            message: response.error.data.message,
             status: "error"
           })
         );
@@ -66,10 +66,6 @@ const SignupPage = () => {
       }
       setSubmitting(false);
     });
-  };
-
-  const navigateToSection = (url: string) => {
-    router.push(`/${url}`);
   };
 
   return (

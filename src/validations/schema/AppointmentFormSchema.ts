@@ -12,7 +12,7 @@ const appointmentSchema = yup.object().shape({
     .email(MESSAGES.EMAIL_MESSAGE)
     .required(MESSAGES.REQUIRE_MESSAGE),
   city: yup.string().trim().required(MESSAGES.REQUIRE_MESSAGE),
-  problem: yup.string().trim().required(MESSAGES.REQUIRE_MESSAGE)
+  description: yup.string().trim().required(MESSAGES.REQUIRE_MESSAGE)
 });
 
 const userAppointmentSchema = yup.object().shape({

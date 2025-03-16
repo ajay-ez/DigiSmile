@@ -135,11 +135,17 @@ const ClinicServices = () => {
                     _hover={{
                       backgroundColor: "brand.100"
                     }}
-                    onClick={() =>
-                      navigateToSection(
-                        `/profile/${localStorage.getItem("userId")}/quick-appointment?tabId=1&reason=${service.value}`
-                      )
-                    }
+                    onClick={() => {
+                      if (localStorage.getItem("userId")) {
+                        navigateToSection(
+                          `/profile/${localStorage.getItem("userId")}/quick-appointment?tabId=1&reason=${service.value}`
+                        );
+                      } else {
+                        navigateToSection(
+                          `/appointment?reason=${service.value}`
+                        );
+                      }
+                    }}
                   >
                     BOOK NOW
                   </Button>

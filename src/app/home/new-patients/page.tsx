@@ -128,12 +128,11 @@ const NewPatientsPage = () => {
             Flexible Appointment Times
           </Text>
           <Text as={"h4"} textAlign={"center"}>
-            We know that life can get busy, so we offer evening and weekend
-            appointments to accommodate your schedule. If you need to take care
-            of your dental care outside of normal work or school hours,
-            we&apos;ve got you covered! For many patients, treatment can be
-            completed or started on the same day as the consultation, saving you
-            an extra trip to the office. However, more complex cases may require
+            We understand that life can get busy, so if you’re unable to make
+            your scheduled appointment, we’re happy to help you reschedule at a
+            more convenient time. For many patients, treatment can be completed
+            or started on the same day as the consultation, saving you an extra
+            trip to the office. However, more complex cases may require
             follow-up visits.
           </Text>
           <Text

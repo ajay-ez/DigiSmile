@@ -78,6 +78,7 @@ const Footer = () => {
               onClick={() => {
                 if (!localStorage.getItem("userId")) {
                   navigateToSection("appointment?clinic=dc");
+                  // navigateToSection("appointment");
                 } else {
                   navigateToSection(
                     `profile/${localStorage.getItem("userId")}/quick-appointment?tabId=1&clinic=dc`
@@ -128,6 +129,7 @@ const Footer = () => {
               onClick={() => {
                 if (!localStorage.getItem("userId")) {
                   navigateToSection("appointment?clinic=burke");
+                  // navigateToSection("appointment");
                 } else {
                   navigateToSection(
                     `profile/${localStorage.getItem("userId")}/quick-appointment?tabId=1&clinic=burke`

@@ -2,7 +2,7 @@
 
 import React from "react";
 import { Formik, Form } from "formik";
-import { ForgotPasswordValues } from "@/types";
+import { ChangePasswordValues } from "@/types";
 import {
   Box,
   Button,
@@ -19,7 +19,7 @@ import { useDispatch } from "react-redux";
 import { showToastWithTimeout } from "@/redux/SharedSlice";
 import useAuthToken from "@/hooks/useAuthToken";
 
-const initialLoginValues: ForgotPasswordValues = {
+const initialLoginValues: ChangePasswordValues = {
   new_password: "",
   old_password: ""
 };
@@ -30,11 +30,13 @@ const LoginPage = () => {
   const [isMobile] = useMediaQuery("(max-width: 860px)");
 
   const handleChangePassword = async (
-    values: ForgotPasswordValues,
+    values: ChangePasswordValues,
     setSubmitting: (data: boolean) => void
   ) => {
     const authToken = localStorage.getItem("authToken");
     const response = await changePasswordAction({ ...values, authToken });
+    console.log("response", response);
+
     if (response?.success) {
       dispatch(
         showToastWithTimeout({
