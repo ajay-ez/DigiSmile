@@ -48,7 +48,7 @@ const LocationSection = () => {
               variant={"location-section-button"}
               onClick={() => {
                 if (!localStorage.getItem("userId")) {
-                  navigateToSection("appointment?clinic=dc");
+                  navigateToSection("/appointment?clinic=dc");
                 } else {
                   navigateToSection(
                     `profile/${localStorage.getItem("userId")}/quick-appointment?tabId=1&clinic=dc`
@@ -68,7 +68,7 @@ const LocationSection = () => {
               variant={"location-section-button"}
               onClick={() => {
                 if (!localStorage.getItem("userId")) {
-                  navigateToSection("appointment?clinic=burke");
+                  navigateToSection("/appointment?clinic=burke");
                 } else {
                   navigateToSection(
                     `profile/${localStorage.getItem("userId")}/quick-appointment?tabId=1&clinic=burke`

@@ -35,48 +35,24 @@ const ForgotPasswordPage = () => {
     values: ForgotPasswordValues,
     setSubmitting: (data: boolean) => void
   ) => {
-    const response = await forgotPasswordAction({ values });
-    // if (response.error) {
-    //   dispatch(
-    //     showToastWithTimeout({
-    //       message: response.error || "Internal server error",
-    //       status: "error"
-    //     })
-    //   );
-    // } else {
-    //   dispatch(
-    //     showToastWithTimeout({
-    //       message: response.data.message || "Success",
-    //       status: "success"
-    //     })
-    //   );
-    // }
+    const response = await forgotPasswordAction(values);
+    if (response.error) {
+      dispatch(
+        showToastWithTimeout({
+          message: response.error || "Internal server error",
+          status: "error"
+        })
+      );
+    } else {
+      dispatch(
+        showToastWithTimeout({
+          message:
+            "Your password has been successfully reset. Please check your email.",
+          status: "success"
+        })
+      );
+    }
     setSubmitting(false);
-
-    // userLogin(values).then((response: any) => {
-    //   if (response?.data?.status_code === 200) {
-    //     dispatch(
-    //       showToastWithTimeout({
-    //         message: "Successfully logged in",
-    //         status: "success"
-    //       })
-    //     );
-    //     setAuthToken(response.data);
-    //     setTimeout(() => {
-    //       router.push(
-    //         `/profile/${localStorage.getItem("userId")}/quick-appointment?tabId=1`
-    //       );
-    //     }, 100);
-    //   } else {
-    //     dispatch(
-    //       showToastWithTimeout({
-    //         message: response.error.data.message || "Something went wrong",
-    //         status: "error"
-    //       })
-    //     );
-    //   }
-    //   setSubmitting(false);
-    // });
   };
 
   return (

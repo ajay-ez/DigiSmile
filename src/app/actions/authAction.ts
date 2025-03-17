@@ -35,16 +35,16 @@ export const forgotPasswordAction = async (payload: any) => {
         headers: {
           "Content-Type": "application/json"
         },
-        body: JSON.stringify({ email: payload.email })
+        body: JSON.stringify(payload)
       }
     );
     const jsonResponse = await apiResponse.json();
 
-    if (apiResponse.status !== 200) throw jsonResponse;
+    if (apiResponse.status !== 201) throw jsonResponse;
 
     return { success: true, data: jsonResponse };
   } catch (error: any) {
-    return { success: false, error: error.message || error.msg };
+    return { success: false, error: error.message };
   }
 };
 

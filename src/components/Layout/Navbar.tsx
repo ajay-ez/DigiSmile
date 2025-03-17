@@ -21,13 +21,14 @@ import {
   useMediaQuery
 } from "@chakra-ui/react";
 import { HEADER_HEIGHT } from "@/utils/constant";
-import { useSelector } from "react-redux";
-import { getHeaderStatus } from "@/redux/SharedSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { getHeaderStatus, toggleHeader } from "@/redux/SharedSlice";
 import Link from "next/link";
 
 export default function Navbar() {
   const { data, isError } = useGetUserDetailsQuery();
   const router = useRouter();
+  const dispatch = useDispatch();
   const [isMobile] = useMediaQuery("(max-width: 1000px)");
 
   const [userId, setUserId] = useState<string | null>(null);
@@ -64,6 +65,12 @@ export default function Navbar() {
     clearAuthToken();
     location.reload();
   };
+
+  useEffect(() => {
+    return () => {
+      dispatch(toggleHeader(false));
+    };
+  }, []);
 
   return (
     <Box

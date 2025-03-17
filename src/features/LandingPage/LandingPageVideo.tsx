@@ -55,7 +55,7 @@ const LandingPageVideo = () => {
           variant={"brand"}
           onClick={() => {
             if (!localStorage.getItem("userId")) {
-              navigateToSection("appointment");
+              navigateToSection("/appointment");
             } else {
               navigateToSection(
                 `profile/${localStorage.getItem("userId")}/quick-appointment?tabId=1`

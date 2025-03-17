@@ -19,12 +19,12 @@ import { useDispatch } from "react-redux";
 import { showToastWithTimeout } from "@/redux/SharedSlice";
 import useAuthToken from "@/hooks/useAuthToken";
 
-const initialLoginValues: ChangePasswordValues = {
+const initialChangePasswordValues: ChangePasswordValues = {
   new_password: "",
   old_password: ""
 };
 
-const LoginPage = () => {
+const ChangePasswordPage = () => {
   const dispatch: AppDispatch = useDispatch();
   const { clearAuthToken } = useAuthToken();
   const [isMobile] = useMediaQuery("(max-width: 860px)");
@@ -92,7 +92,7 @@ const LoginPage = () => {
             mb={{ base: "20px", md: "auto" }}
           >
             <Formik
-              initialValues={initialLoginValues}
+              initialValues={initialChangePasswordValues}
               validationSchema={ChangePasswordSchema}
               onSubmit={(form, { setSubmitting }) => {
                 handleChangePassword(form, setSubmitting);
@@ -139,4 +139,4 @@ const LoginPage = () => {
   );
 };
 
-export default LoginPage;
+export default ChangePasswordPage;
