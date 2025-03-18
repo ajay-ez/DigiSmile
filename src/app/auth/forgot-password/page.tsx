@@ -3,7 +3,6 @@
 import React from "react";
 import { Formik, Form } from "formik";
 import { ForgotPasswordValues } from "@/types";
-import useAuthToken from "@/hooks/useAuthToken";
 import { useRouter } from "next/navigation";
 import {
   Box,
@@ -21,6 +20,7 @@ import Image from "next/image";
 import { digismileLogoImage } from "@/assets/images";
 import { forgotPasswordAction } from "@/app/actions/authAction";
 import { showToastWithTimeout } from "@/redux/SharedSlice";
+import { IoMdHome } from "react-icons/io";
 
 const initialForgotValues: ForgotPasswordValues = {
   email: ""
@@ -51,6 +51,9 @@ const ForgotPasswordPage = () => {
           status: "success"
         })
       );
+      setTimeout(() => {
+        router.push(`/auth/login`);
+      }, 100);
     }
     setSubmitting(false);
   };
@@ -112,7 +115,27 @@ const ForgotPasswordPage = () => {
             </Button>
           </Flex>
         )}
-        <Box width={isMobile ? "90vw" : "400px"} px={12} py={16}>
+        <Box
+          width={isMobile ? "90vw" : "400px"}
+          px={12}
+          py={16}
+          position={"relative"}
+        >
+          {isMobile && (
+            <IoMdHome
+              onClick={() => {
+                router.push("/home");
+              }}
+              style={{
+                position: "absolute",
+                left: 10,
+                top: 10,
+                border: "2px black solid",
+                borderRadius: "50%"
+              }}
+              size={30}
+            />
+          )}
           <Text
             as={"h1"}
             mb="1rem"

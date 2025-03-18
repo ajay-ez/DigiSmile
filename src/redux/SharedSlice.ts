@@ -21,14 +21,20 @@ const initialState = {
   sidebarStatus: false
 };
 
+interface ToastInterface {
+  message: string;
+  status: "success" | "error";
+  time?: number;
+}
+
 export const showToastWithTimeout = createAsyncThunk(
   "sharedSlice/showToastWithTimeout",
-  async ({ message, status }: any, thunkAPI) => {
+  async ({ message, status, time }: ToastInterface, thunkAPI) => {
     const id = Date.now().toString();
     thunkAPI.dispatch(sharedSlice.actions.showToast({ message, status, id }));
     setTimeout(() => {
       thunkAPI.dispatch(sharedSlice.actions.hideToast(id));
-    }, 3000);
+    }, time || 3000);
   }
 );
 

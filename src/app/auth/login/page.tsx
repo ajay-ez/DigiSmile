@@ -22,6 +22,7 @@ import { showToastWithTimeout } from "@/redux/SharedSlice";
 import { LoginSchema } from "@/validations/schema/AuthSchema";
 import Image from "next/image";
 import { digismileLogoImage } from "@/assets/images";
+import { IoMdHome } from "react-icons/io";
 
 const initialLoginValues: LoginFormValues = {
   email: "",
@@ -122,7 +123,27 @@ const LoginPage = () => {
             </Button>
           </Flex>
         )}
-        <Box width={isMobile ? "90vw" : "400px"} px={12} py={16}>
+        <Box
+          width={isMobile ? "90vw" : "400px"}
+          px={12}
+          py={16}
+          position={"relative"}
+        >
+          {isMobile && (
+            <IoMdHome
+              onClick={() => {
+                router.push("/home");
+              }}
+              style={{
+                position: "absolute",
+                left: 10,
+                top: 10,
+                border: "2px black solid",
+                borderRadius: "50%"
+              }}
+              size={30}
+            />
+          )}
           <Text
             as={"h1"}
             mb="1rem"

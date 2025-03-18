@@ -17,9 +17,8 @@ const CustomToastComponent = () => {
   };
 
   const getAlertIcon = (alertStatus: string) => {
-    if (alertStatus === "error") return <MdError />;
-
-    return <MdError />;
+    if (alertStatus === "error") return <MdError size={40} />;
+    return <MdError size={40} />;
   };
 
   return (
@@ -36,7 +35,7 @@ const CustomToastComponent = () => {
         return (
           <Flex
             key={index}
-            w="75"
+            w="150"
             gap={4}
             py="3"
             pl="4"
@@ -52,13 +51,10 @@ const CustomToastComponent = () => {
             <Flex alignItems={"center"}>
               {getAlertIcon(data?.status)}
 
-              <Text ml="2" fontSize="sm">
+              <Text ml="2" as={"h4"}>
                 {data?.message}
               </Text>
             </Flex>
-            {/* <div className="progress-bar">
-              <div className="progress-bar-fill"></div>
-            </div> */}
           </Flex>
         );
       })}
