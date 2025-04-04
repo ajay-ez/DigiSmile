@@ -33,7 +33,12 @@ const CheckAppointmentPage = () => {
       },
       { id: "location", columnName: "Location", type: "String" },
       { id: "phone_number", columnName: "Phone Number", type: "String" },
-      { id: "start_end_time", columnName: "Time of treatment", type: "String" }
+      { id: "start_end_time", columnName: "Time of treatment", type: "String" },
+      {
+        id: "doctor_reshcedule",
+        columnName: "Reschedule",
+        type: "DoctorSchedule"
+      }
     ]
   };
 

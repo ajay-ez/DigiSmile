@@ -25,6 +25,7 @@ import { useDispatch } from "react-redux";
 import { showToastWithTimeout } from "@/redux/SharedSlice";
 import RescheduleModalComponent from "../RescheduleModal";
 import { useRouter } from "next/navigation";
+import DoctorReschedule from "../DoctorReshedule";
 
 interface Properties {
   headers: Header;
@@ -291,6 +292,13 @@ const TableComponent = ({
                                     >
                                       Reschedule
                                     </Button>
+                                  </Td>
+                                ) : header.type === "DoctorSchedule" ? (
+                                  <Td
+                                    key={index_}
+                                    onClick={() => handleRowClick(record)}
+                                  >
+                                    <DoctorReschedule />
                                   </Td>
                                 ) : (
                                   <></>
