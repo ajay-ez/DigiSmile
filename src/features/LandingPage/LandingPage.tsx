@@ -34,14 +34,14 @@ const LandingPage = () => {
 
   return (
     <Box position={"relative"}>
-      <Script
+      {/* <Script
         src="https://offsiteschedule.zocdoc.com/plugin/embed"
         strategy="lazyOnload"
-      />
+      /> */}
       <Navbar />
       <LandingPageVideo />
       <LocationSection />
-      <Box as="div" maxW="container.xl" mx="auto" py={8} px={4}>
+      {/* <Box as="div" maxW="container.xl" mx="auto" py={8} px={4}>
         <div>
           <a
             style={{ display: "block" }}
@@ -59,7 +59,7 @@ const LandingPage = () => {
             />
           </a>
         </div>
-      </Box>
+      </Box> */}
       <ImageGallery />
       <MissionComponent />
       <ServiceSection />

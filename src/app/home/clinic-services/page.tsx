@@ -138,7 +138,7 @@ const ClinicServices = () => {
                     onClick={() => {
                       if (localStorage.getItem("userId")) {
                         navigateToSection(
-                          `/profile/${localStorage.getItem("userId")}/quick-appointment?tabId=1&reason=${service.value}`
+                          `/profile/${localStorage.getItem("userId")}/quick-appointment?tabId=2&reason=${service.value}`
                         );
                       } else {
                         navigateToSection(

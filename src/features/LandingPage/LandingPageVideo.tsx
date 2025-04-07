@@ -58,7 +58,7 @@ const LandingPageVideo = () => {
               navigateToSection("/appointment");
             } else {
               navigateToSection(
-                `profile/${localStorage.getItem("userId")}/quick-appointment?tabId=1`
+                `profile/${localStorage.getItem("userId")}/quick-appointment?tabId=2`
               );
             }
           }}

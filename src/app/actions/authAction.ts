@@ -26,6 +26,35 @@ export const changePasswordAction = async (passwords: any) => {
   }
 };
 
+export const UpdateProfileAction = async (detail: any) => {
+  detail.name = detail.first_name + " " + detail.last_name;
+  console.log('detail', detail);
+  try {
+    const apiResponse = await fetch(
+      `${process.env.NEXT_PUBLIC_API_BASE_URL}/update_details`,
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `${detail.authToken}`
+        },
+        body: JSON.stringify({
+          name: detail.name,
+          email: detail.email,
+          user_id: detail.userId
+        })
+      }
+    );
+    const jsonResponse = await apiResponse.json();
+    console.log('jsonResponse', jsonResponse);
+    if (apiResponse.status !== 200) throw jsonResponse;
+
+    return { success: true, data: jsonResponse };
+  } catch (error: any) {
+    return { success: false, error: error.message || error.msg };
+  }
+};
+
 export const forgotPasswordAction = async (payload: any) => {
   try {
     const apiResponse = await fetch(

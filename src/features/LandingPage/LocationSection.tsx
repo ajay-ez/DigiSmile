@@ -51,7 +51,7 @@ const LocationSection = () => {
                   navigateToSection("/appointment?clinic=dc");
                 } else {
                   navigateToSection(
-                    `profile/${localStorage.getItem("userId")}/quick-appointment?tabId=1&clinic=dc`
+                    `profile/${localStorage.getItem("userId")}/quick-appointment?tabId=2&clinic=dc`
                   );
                 }
               }}
@@ -71,7 +71,7 @@ const LocationSection = () => {
                   navigateToSection("/appointment?clinic=burke");
                 } else {
                   navigateToSection(
-                    `profile/${localStorage.getItem("userId")}/quick-appointment?tabId=1&clinic=burke`
+                    `profile/${localStorage.getItem("userId")}/quick-appointment?tabId=2&clinic=burke`
                   );
                 }
               }}

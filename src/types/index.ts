@@ -3,6 +3,13 @@ export interface LoginFormValues {
   password: string;
 }
 
+export interface UserProfileValues {
+  first_name: string;
+  last_name: string;
+  email: string;
+  phone_number: string;
+}
+
 export interface ChangePasswordValues {
   new_password: string;
   old_password: string;

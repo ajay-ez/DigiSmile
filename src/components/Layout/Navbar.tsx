@@ -51,14 +51,14 @@ export default function Navbar() {
 
   const handleProfileVisit = () => {
     if (data?.user_type === "staff") {
-      navigateToSection(`profile/${userId}/add-medical-records?tabId=5`);
+      navigateToSection(`profile/${userId}/add-medical-records?tabId=6`);
     } else {
-      navigateToSection(`profile/${userId}/documents?tabId=0`);
+      navigateToSection(`profile/${userId}/profile?tabId=0`);
     }
   };
 
   const handleChangePassword = () => {
-    navigateToSection(`profile/${userId}/change-password?tabId=4`);
+    navigateToSection(`profile/${userId}/change-password?tabId=5`);
   };
 
   const handleLogout = () => {
@@ -150,7 +150,7 @@ export default function Navbar() {
                       variant="appointment"
                       onClick={() =>
                         navigateToSection(
-                          `profile/${userId}/quick-appointment?tabId=1`
+                          `profile/${userId}/quick-appointment?tabId=2`
                         )
                       }
                     >
@@ -167,7 +167,7 @@ export default function Navbar() {
                       // }}
                       onClick={() =>
                         navigateToSection(
-                          `profile/${userId}/add-medical-records?tabId=5`
+                          `profile/${userId}/add-medical-records?tabId=6`
                         )
                       }
                     >
@@ -191,7 +191,7 @@ export default function Navbar() {
                           <MenuItem
                             onClick={() =>
                               navigateToSection(
-                                `profile/${userId}/add-medical-records?tabId=5`
+                                `profile/${userId}/add-medical-records?tabId=6`
                               )
                             }
                           >
@@ -201,7 +201,7 @@ export default function Navbar() {
                           <MenuItem
                             onClick={() =>
                               navigateToSection(
-                                `profile/${userId}/quick-appointment?tabId=1`
+                                `profile/${userId}/quick-appointment?tabId=2`
                               )
                             }
                           >
@@ -246,7 +246,7 @@ export default function Navbar() {
                           <MenuItem
                             onClick={() =>
                               navigateToSection(
-                                `profile/${userId}/add-medical-records?tabId=5`
+                                `profile/${userId}/add-medical-records?tabId=6`
                               )
                             }
                           >
@@ -256,7 +256,7 @@ export default function Navbar() {
                           <MenuItem
                             onClick={() =>
                               navigateToSection(
-                                `profile/${userId}/quick-appointment?tabId=1`
+                                `profile/${userId}/quick-appointment?tabId=2`
                               )
                             }
                           >

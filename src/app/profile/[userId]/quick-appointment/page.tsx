@@ -70,7 +70,7 @@ const QuickAppointment = () => {
           })
         );
         router.push(
-          `/profile/${localStorage.getItem("userId")}/upcoming-appointments?tabId=2`
+          `/profile/${localStorage.getItem("userId")}/upcoming-appointments?tabId=3`
         );
         setSubmitting(false);
       } else {
@@ -96,7 +96,7 @@ const QuickAppointment = () => {
           })
         );
         router.push(
-          `/profile/${localStorage.getItem("userId")}/upcoming-appointments?tabId=2`
+          `/profile/${localStorage.getItem("userId")}/upcoming-appointments?tabId=3`
         );
         setSubmitting(false);
       } else {

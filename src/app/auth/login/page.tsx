@@ -51,7 +51,7 @@ const LoginPage = () => {
         setAuthToken(response.data);
         setTimeout(() => {
           router.push(
-            `/profile/${localStorage.getItem("userId")}/quick-appointment?tabId=1`
+            `/profile/${localStorage.getItem("userId")}/quick-appointment?tabId=2`
           );
         }, 100);
       } else {

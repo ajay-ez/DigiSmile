@@ -1,6 +1,6 @@
 import * as yup from "yup";
 import * as MESSAGES from "../messages";
-import { requiredCharField } from "..";
+import { contactNumberValidation, requiredCharField } from "..";
 
 export const LoginSchema = yup.object().shape({
   email: yup
@@ -31,6 +31,16 @@ export const ChangePasswordSchema = yup.object().shape({
     .string()
     .min(8, "Password must be at least 8 characters long")
     .required("Password is required")
+});
+
+export const UserProfileSchema = yup.object().shape({
+  first_name: requiredCharField("First Name"),
+  last_name: requiredCharField("Last Name"),
+  email: yup
+    .string()
+    .trim()
+    .email(MESSAGES.EMAIL_MESSAGE)
+    .required(MESSAGES.REQUIRE_MESSAGE),
 });
 
 export const MedicalRecordsSchema = yup.object().shape({

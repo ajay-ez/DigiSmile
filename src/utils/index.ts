@@ -48,48 +48,55 @@ export const sidebarData: {
 }[] = [
   {
     id: "0",
+    name: "User Profile",
+    url: "profile",
+    component: RemoveIconComponent,
+    permission: "patient"
+  },
+  {
+    id: "1",
     name: "Documents",
     url: "documents",
     component: RemoveIconComponent,
     permission: "patient"
   },
   {
-    id: "1",
+    id: "2",
     name: "Quick Appointment",
     url: "quick-appointment",
     component: RemoveIconComponent,
     permission: "patient"
   },
   {
-    id: "2",
+    id: "3",
     name: "Upcoming Appointments",
     url: "upcoming-appointments",
     component: UpcomingAppointmentIconComponent,
     permission: "patient"
   },
   {
-    id: "3",
+    id: "4",
     name: "Appointment History",
     url: "appointment-history",
     component: AppointmentHistoryIconComponent,
     permission: "patient"
   },
   {
-    id: "4",
+    id: "5",
     name: "Change Password",
     url: "change-password",
     component: ChangePasswordIconComponent,
     permission: "patient"
   },
   {
-    id: "5",
+    id: "6",
     name: "Add Medical Records",
     url: "add-medical-records",
     component: MedicalRecordIconComponent,
     permission: "staff"
   },
   {
-    id: "6",
+    id: "7",
     name: "Check Appointment",
     url: "check-appointment",
     component: MedicalRecordIconComponent,

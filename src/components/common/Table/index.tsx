@@ -127,7 +127,7 @@ const TableComponent = ({
 
   const handleRescheduleConfirm = async () => {
     router.push(
-      `/profile/${localStorage.getItem("userId")}/quick-appointment?tabId=1&reschedule=true&appointmentId=${rescheduleModal.appointmentId}`
+      `/profile/${localStorage.getItem("userId")}/quick-appointment?tabId=2&reschedule=true&appointmentId=${rescheduleModal.appointmentId}`
     );
   };
 

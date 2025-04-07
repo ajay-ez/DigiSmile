@@ -65,7 +65,7 @@ const ProfileLayout = ({ children }: { children: React.ReactNode }) => {
         if (data?.user_type === "staff") {
           if (tabId !== "5") {
             router.push(
-              `/profile/${localStorage.getItem("userId")}/add-medical-records?tabId=5`
+              `/profile/${localStorage.getItem("userId")}/add-medical-records?tabId=6`
             );
           }
           const tab = sidebarData.find((item) => item.id === tabId);
@@ -75,7 +75,7 @@ const ProfileLayout = ({ children }: { children: React.ReactNode }) => {
         } else if (data?.user_type === "patient") {
           if (tabId === "5") {
             router.push(
-              `/profile/${localStorage.getItem("userId")}/documents?tabId=0`
+              `/profile/${localStorage.getItem("userId")}/documents?tabId=1`
             );
           }
           const tab = sidebarData.find((item) => item.id === tabId);
@@ -83,17 +83,17 @@ const ProfileLayout = ({ children }: { children: React.ReactNode }) => {
             setSelectedTab({ id: tabId, name: tab.name, url: tab.url });
           } else {
             router.push(
-              `/profile/${localStorage.getItem("userId")}/documents?tabId=0`
+              `/profile/${localStorage.getItem("userId")}/documents?tabId=1`
             );
           }
         } else {
           setSelectedTab({
-            id: "6",
+            id: "7",
             name: "Check Appointment",
             url: "check-appointment"
           });
           router.push(
-            `/profile/${localStorage.getItem("userId")}/check-appointment?tabId=6`
+            `/profile/${localStorage.getItem("userId")}/check-appointment?tabId=7`
           );
         }
       }
@@ -132,7 +132,7 @@ const ProfileLayout = ({ children }: { children: React.ReactNode }) => {
     if (data?.user_type === "staff") {
       navigateToSection("add-medical-records");
     } else {
-      navigateToSection(`profile/${userId}/documents?tabId=0`);
+      navigateToSection(`profile/${userId}/profile?tabId=0`);
     }
   };
 
@@ -141,7 +141,7 @@ const ProfileLayout = ({ children }: { children: React.ReactNode }) => {
   };
 
   const handleChangePassword = () => {
-    navigateToSection(`profile/${userId}/change-password?tabId=4`);
+    navigateToSection(`profile/${userId}/change-password?tabId=5`);
   };
 
   return (
