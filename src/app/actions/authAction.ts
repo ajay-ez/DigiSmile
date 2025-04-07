@@ -28,7 +28,6 @@ export const changePasswordAction = async (passwords: any) => {
 
 export const UpdateProfileAction = async (detail: any) => {
   detail.name = detail.first_name + " " + detail.last_name;
-  console.log('detail', detail);
   try {
     const apiResponse = await fetch(
       `${process.env.NEXT_PUBLIC_API_BASE_URL}/update_details`,
@@ -46,7 +45,6 @@ export const UpdateProfileAction = async (detail: any) => {
       }
     );
     const jsonResponse = await apiResponse.json();
-    console.log('jsonResponse', jsonResponse);
     if (apiResponse.status !== 200) throw jsonResponse;
 
     return { success: true, data: jsonResponse };
