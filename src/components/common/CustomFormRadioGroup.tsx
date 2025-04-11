@@ -76,7 +76,7 @@ const FormCustomRadioGroup: React.FC<RadioGroupFieldProps> = ({
               <Text
                 mr={8}
                 as={"h5"}
-                opacity={option.status === "booked" ? "0.4" : "1"}
+                opacity={option.status === "booked" ? "0.2" : "1"}
               >
                 {option.status === "booked" ? "BOOKED" : "AVAILABLE"}
               </Text>

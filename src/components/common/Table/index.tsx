@@ -19,12 +19,13 @@ import { Header } from "@/types/table";
 import Shimmer from "./Shimmer";
 import DownloadIconComponent from "@/app/Icons/DownloadIcon";
 import ConfirmationModalComponent from "../ConfirmationModal";
-import { cancelAppointment } from "@/app/actions/appointmentAction";
+import { cancelAppointment, fetchAvailableAppointments } from "@/app/actions/appointmentAction";
 import { AppDispatch } from "@/redux/store";
 import { useDispatch } from "react-redux";
 import { showToastWithTimeout } from "@/redux/SharedSlice";
 import RescheduleModalComponent from "../RescheduleModal";
 import { useRouter } from "next/navigation";
+import DoctorReschedule from "@/features/DoctorReschedule";
 
 interface Properties {
   headers: Header;
@@ -60,6 +61,7 @@ const TableComponent = ({
     status: false,
     appointmentId: ""
   });
+  const [initialSlots, setInitialSlots] = useState([]);
   const [rescheduleModal, setRescheduleModal] = useState({
     status: false,
     appointmentId: ""
@@ -77,7 +79,19 @@ const TableComponent = ({
 
   useEffect(() => {
     fetchData();
+    fetchInitialSlots();
   }, []);
+
+  const fetchInitialSlots = async () => {
+    const response = await fetchAvailableAppointments({
+      appointment_date: moment().format("YYYY-MM-DD"),
+      location: "dc",
+      showBooked: true
+    });
+    if (response?.success) {
+      setInitialSlots(response?.data?.slotss || []);
+    }
+  };
 
   useEffect(() => {
     if (refetch === true) {
@@ -129,6 +143,10 @@ const TableComponent = ({
     router.push(
       `/profile/${localStorage.getItem("userId")}/quick-appointment?tabId=2&reschedule=true&appointmentId=${rescheduleModal.appointmentId}`
     );
+  };
+
+  const handleRescheduleSubmit = async (values: any) => {
+    fetchData();
   };
 
   const handleConfirmationClose = () => {
@@ -291,6 +309,13 @@ const TableComponent = ({
                                     >
                                       Reschedule
                                     </Button>
+                                  </Td>
+                                ) : header.type === "DoctorSchedule" ? (
+                                  <Td
+                                    key={index_}
+                                    onClick={() => handleRowClick(record)}
+                                  >
+                                    <DoctorReschedule initialData={record} initialSlots={initialSlots} onSubmit={handleRescheduleSubmit} />
                                   </Td>
                                 ) : (
                                   <></>

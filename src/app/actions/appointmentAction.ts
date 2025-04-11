@@ -3,7 +3,7 @@
 import moment from "moment";
 
 export const fetchAvailableAppointments = async (payload: any) => {
-  const { appointment_date, city } = payload;
+  const { appointment_date, city, showBooked= false } = payload;
   try {
     const apiResponse = await fetch(
       `${process.env.NEXT_PUBLIC_API_BASE_URL}/get_appointments`,
@@ -17,6 +17,9 @@ export const fetchAvailableAppointments = async (payload: any) => {
     );
     const jsonResponse = await apiResponse.json();
     if (apiResponse.status !== 200) throw jsonResponse;
+    if(showBooked && jsonResponse?.slotss){
+      jsonResponse.slotss = jsonResponse.slotss.filter((slot: any) => slot.status !== "booked");
+    }
 
     return { success: true, data: jsonResponse };
   } catch (error: any) {

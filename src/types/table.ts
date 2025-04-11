@@ -27,6 +27,7 @@ interface HeaderProperties {
     | "Cancel"
     | "Reschedule"
     | "Menu"
+    | "DoctorSchedule"
     | "Download";
   isEnum?: boolean;
   shouldSort?: boolean;

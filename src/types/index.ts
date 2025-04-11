@@ -36,3 +36,14 @@ export interface SignupFormValues extends LoginFormValues {
   confirmPassword?: string;
   problem: string;
 }
+
+export interface appointmentValues {
+  first_name: string;
+  last_name: string;
+  date_of_birth: string;
+  address: string;
+  phone_number: string;
+  confirmPassword?: string;
+  problem: string;
+  city: string;
+}

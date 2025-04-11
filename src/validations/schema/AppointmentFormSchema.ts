@@ -21,4 +21,15 @@ const userAppointmentSchema = yup.object().shape({
   slot: yup.string().trim().required(MESSAGES.REQUIRE_MESSAGE)
 });
 
-export { appointmentSchema, userAppointmentSchema };
+const rescheduleAppointmentSchema = yup.object().shape({
+  city: yup.string().trim().required(MESSAGES.REQUIRE_MESSAGE),
+  slot: yup.string().trim().required(MESSAGES.REQUIRE_MESSAGE),
+  start_time: yup.string().trim().required(MESSAGES.REQUIRE_MESSAGE),
+  end_time: yup.string().trim().required(MESSAGES.REQUIRE_MESSAGE),
+  appointment_date : yup.string().trim().required(MESSAGES.REQUIRE_MESSAGE),
+  appointment_id : yup.string().trim().required(MESSAGES.REQUIRE_MESSAGE),
+  description : yup.string().trim().required(MESSAGES.REQUIRE_MESSAGE),
+  rescheduled_by : yup.string().trim().required(MESSAGES.REQUIRE_MESSAGE),
+});
+
+export { appointmentSchema, userAppointmentSchema, rescheduleAppointmentSchema };
