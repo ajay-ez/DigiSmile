@@ -162,7 +162,7 @@ const ProfileLayout = ({ children }: { children: React.ReactNode }) => {
               justifyContent={"space-between"}
               position={"absolute"}
               left={0}
-              zIndex={3}
+              zIndex={5}
               height={"100%"}
               overflow={"auto"}
             >
