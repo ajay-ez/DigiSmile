@@ -43,7 +43,7 @@ const ProfileLayout = ({ children }: { children: React.ReactNode }) => {
   const navigateToSection = (url: string) => {
     router.push(`/${url}`);
   };
-
+  
   return (
     <>
       <Flex

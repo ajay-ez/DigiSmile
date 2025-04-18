@@ -22,8 +22,12 @@ import { useGetUserDetailsQuery } from "@/services/apiServices/profileService";
 
 const ChangePasswordPage = () => {
   const dispatch: AppDispatch = useDispatch();
-  const { data } = useGetUserDetailsQuery();
+  const { data } = useGetUserDetailsQuery(undefined, {
+    refetchOnMountOrArgChange: true
+  });
   const [isMobile] = useMediaQuery("(max-width: 860px)");
+
+  
 
   const initialProfileValues: UserProfileValues = {
     first_name: data?.first_name || "",

@@ -5,7 +5,7 @@ import * as MESSAGES from "../messages";
 const appointmentSchema = yup.object().shape({
   first_name: yup.string().trim().required(MESSAGES.REQUIRE_MESSAGE),
   last_name: yup.string().trim().required(MESSAGES.REQUIRE_MESSAGE),
-  phone_number: yup.string().trim().required(MESSAGES.REQUIRE_MESSAGE),
+  phone_number: yup.string().trim().matches(/^\d{10}$/, "Phone number must be exactly 10 digits").notRequired(),
   email: yup
     .string()
     .trim()

@@ -41,6 +41,7 @@ export const UserProfileSchema = yup.object().shape({
     .trim()
     .email(MESSAGES.EMAIL_MESSAGE)
     .required(MESSAGES.REQUIRE_MESSAGE),
+  phone_number: yup.string().trim().matches(/^\d{10}$/, "Phone number must be exactly 10 digits").notRequired(),
 });
 
 export const MedicalRecordsSchema = yup.object().shape({
@@ -71,5 +72,4 @@ export const SignupSchema = yup.object().shape({
     .string()
     .oneOf([yup.ref("password")], "Passwords must match")
     .required("Confirm Password is required")
-  // phone_number: contactNumberValidation
 });

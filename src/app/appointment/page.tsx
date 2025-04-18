@@ -32,7 +32,7 @@ const BookAppointment = () => {
   const [isMobile] = useMediaQuery("(max-width: 1000px)");
   const searchParams = useSearchParams();
   const dispatch: AppDispatch = useDispatch();
-  const [slotsStatus, setSlotsStatus] = useState({ status: false, text: "" });
+  const [slotsStatus, setSlotsStatus] = useState({ status: false, text: "", success: false });
   const [selectedDate, setSelectedDate] = useState<Date | null>(new Date());
   const [initialFormValues, setInitialFormValues] = useState({
     first_name: "",
@@ -70,9 +70,9 @@ const BookAppointment = () => {
       city
     });
     if (response?.data?.error) {
-      setSlotsStatus({ text: response?.data?.error, status: false });
+      setSlotsStatus({ text: response?.data?.error, status: false, success: false });
     } else if (response?.data?.slotss) {
-      setSlotsStatus({ text: "Slots Available", status: true });
+      setSlotsStatus({ text: "Slots Available", status: true, success: true });
     }
     setSelectedDate(date);
   };
@@ -252,7 +252,7 @@ const BookAppointment = () => {
                       minDate={new Date()}
                       inline
                     />
-                    <Text as={"h4"}>{slotsStatus.text}</Text>
+                    <Text as={"h4"} textAlign={'center'} color={slotsStatus.success ? "green !important" : "red !important"}>{slotsStatus.text}</Text>
                   </div>
                 </Flex>
               </Flex>

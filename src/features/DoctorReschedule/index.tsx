@@ -1,4 +1,4 @@
-import { Button, Flex } from "@chakra-ui/react";
+import { Button, Flex, Text } from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
@@ -21,6 +21,7 @@ interface DoctorRescheduleProps {
 
 const DoctorReschedule = ({ initialSlots = [], initialData, onSubmit }: DoctorRescheduleProps) => {
   const dispatch: AppDispatch = useDispatch();
+  const [slotsStatus, setSlotsStatus] = useState({ status: false, text: "", success: false });
   const [initialFormValues, setInitialFormValues] = useState({
     city: "dc",
     slot: '',
@@ -35,6 +36,15 @@ const DoctorReschedule = ({ initialSlots = [], initialData, onSubmit }: DoctorRe
   const [slots, setSlots] = useState(initialSlots);
   const [selectedDate, setSelectedDate] = useState<Date | null>(new Date());
 
+  useEffect(() => {
+    if (initialSlots.length > 0) {
+      setSlotsStatus({ text: "Slots Available", status: true, success: true });
+    }
+    else {
+      setSlotsStatus({ text: "No Slots Available", status: false, success: false });
+    }
+  }, [initialSlots]);
+
   const handleDateChange = async (date: Date, city: string) => {
     const updatedDate = moment(date).format("YYYY-MM-DD");
     const response = await fetchAvailableAppointments({
@@ -42,6 +52,11 @@ const DoctorReschedule = ({ initialSlots = [], initialData, onSubmit }: DoctorRe
       city,
       showBooked: true
     });
+    if (response?.data?.error) {
+      setSlotsStatus({ text: response?.data?.error, status: false, success: false });
+    } else if (response?.data?.slotss) {
+      setSlotsStatus({ text: "Slots Available", status: true, success: true });
+    }
     if (response?.success) {
       setSlots(response?.data?.slotss || []);
     } else {
@@ -174,6 +189,7 @@ const DoctorReschedule = ({ initialSlots = [], initialData, onSubmit }: DoctorRe
                     error={errors.start_time}
                     touched={touched.start_time}
                   />
+                  <Text as={"h4"} textAlign={'center'} mb={2} color={slotsStatus.success ? "green !important" : "red !important"}>{slotsStatus.text}</Text>
                   <Button type="submit" variant="changePassword">Reschedule</Button>
                 </DatePicker>
               </Form>

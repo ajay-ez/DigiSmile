@@ -73,11 +73,11 @@ const ProfileLayout = ({ children }: { children: React.ReactNode }) => {
             setSelectedTab({ id: tabId, name: tab.name, url: tab.url });
           }
         } else if (data?.user_type === "patient") {
-          if (tabId === "5") {
-            router.push(
-              `/profile/${localStorage.getItem("userId")}/documents?tabId=1`
-            );
-          }
+          // if (tabId === "5") {
+          //   router.push(
+          //     `/profile/${localStorage.getItem("userId")}/documents?tabId=1`
+          //   );
+          // }
           const tab = sidebarData.find((item) => item.id === tabId);
           if (tab) {
             setSelectedTab({ id: tabId, name: tab.name, url: tab.url });

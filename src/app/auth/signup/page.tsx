@@ -110,7 +110,7 @@ const SignupPage = () => {
               }}
             ></Image>
             <Text as={"h2"} color={"white.900"} fontWeight={800}>
-              Welcome Back!
+            Hello, Welcome!
             </Text>
             <Text as={"h6"} color={"white.900"}>
               Already have an account?

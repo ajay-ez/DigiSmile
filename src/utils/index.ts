@@ -3,6 +3,13 @@ import AppointmentHistoryIconComponent from "@/app/Icons/AppointmentHistoryIcon"
 import UpcomingAppointmentIconComponent from "@/app/Icons/UpcomingAppointmentIcon";
 import ChangePasswordIconComponent from "@/app/Icons/ChangePasswordIcon";
 import MedicalRecordIconComponent from "@/app/Icons/MedicalRecordIcon";
+import SignInIconComponent from "@/app/Icons/SignInIcon";
+import AboutUSIconComponent from "@/app/Icons/AboutUsIcon";
+import ServiceIconComponent from "@/app/Icons/ServicesIcon";
+import AppointmentIconComponent from "@/app/Icons/AppointmentIcon";
+import HomeIconComponent from "@/app/Icons/HomeIcon";
+import DocumentIconComponent from "@/app/Icons/DocumentIcon";
+import QuickAppointmentIconComponent from "@/app/Icons/QuickAppointmentIcon";
 
 export const clinicServices = [
   {
@@ -57,14 +64,14 @@ export const sidebarData: {
     id: "1",
     name: "Documents",
     url: "documents",
-    component: RemoveIconComponent,
+    component: DocumentIconComponent,
     permission: "patient"
   },
   {
     id: "2",
     name: "Quick Appointment",
     url: "quick-appointment",
-    component: RemoveIconComponent,
+    component: QuickAppointmentIconComponent,
     permission: "patient"
   },
   {
@@ -109,25 +116,25 @@ export const appointmentLists = [
     id: "0",
     name: "Home",
     url: "/home",
-    component: RemoveIconComponent
+    component: HomeIconComponent
   },
   {
     id: "1",
     name: "About us",
     url: "/home/about-us",
-    component: RemoveIconComponent
+    component: AboutUSIconComponent
   },
   {
     id: "2",
     name: "Services",
     url: "/home/clinic-services",
-    component: RemoveIconComponent
+    component: ServiceIconComponent
   },
   {
     id: "3",
     name: "Sign Up",
     url: "/auth/signup",
-    component: RemoveIconComponent
+    component: SignInIconComponent
   },
   {
     id: "4",
@@ -139,6 +146,6 @@ export const appointmentLists = [
     id: "5",
     name: "Appointment",
     url: "/appointment",
-    component: RemoveIconComponent
+    component: AppointmentIconComponent
   }
 ];

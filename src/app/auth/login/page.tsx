@@ -106,7 +106,7 @@ const LoginPage = () => {
               }}
             ></Image>
             <Text as={"h2"} color={"white.900"} fontWeight={800}>
-              Hello, Welcome!
+            Welcome Back!
             </Text>
             <Text as={"h6"} color={"white.900"}>
               Don&apos;t have an account?
