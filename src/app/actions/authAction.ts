@@ -40,7 +40,8 @@ export const UpdateProfileAction = async (detail: any) => {
         body: JSON.stringify({
           name: detail.name,
           email: detail.email,
-          user_id: detail.userId
+          user_id: detail.userId,
+          phone_number: detail.phone_number
         })
       }
     );
