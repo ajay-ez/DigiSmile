@@ -28,6 +28,7 @@ const UpcomingAppointmentPage = () => {
       },
       { id: "date", columnName: "Date of treatment", type: "String" },
       { id: "start_end_time", columnName: "Time of treatment", type: "String" },
+      { id: "location", columnName: "Location", type: "String" },
       { id: "cancel", columnName: "Cancel Appointment", type: "Cancel" },
       {
         id: "reschedule",

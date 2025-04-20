@@ -93,7 +93,7 @@ export const fetchUpcomingAppointment = async (userId: any) => {
       item.start_end_time = `${formatTime(item.start_time)} - ${formatTime(item.end_time)}`;
       return item;
     });
-
+    
     return { success: true, data: jsonResponse };
   } catch (error: any) {
     return { success: false, error: error.message };

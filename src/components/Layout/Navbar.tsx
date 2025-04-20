@@ -114,7 +114,7 @@ export default function Navbar() {
               SERVICES
             </Button>
             <Button variant={"header"}>
-              <Link href={"/home#footer-section"}>LOCATIONS</Link>
+              <Link href={"/home#home-location"}>LOCATIONS</Link>
             </Button>
             <Button variant={"header"}>
               <Link href={"/home#footer-section"}>CONTACT US</Link>
