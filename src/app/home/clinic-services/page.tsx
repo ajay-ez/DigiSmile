@@ -116,7 +116,7 @@ const ClinicServices = () => {
                   <Text as={"h5"} fontWeight={500}>
                     {service.description}
                   </Text>
-                  <Text
+                  {/* <Text
                     as={"h4"}
                     fontWeight={600}
                     mt={isLaptop ? 4 : 16}
@@ -126,9 +126,9 @@ const ClinicServices = () => {
                   </Text>
                   <Text as={"h4"} mt={2}>
                     {service.price}
-                  </Text>
+                  </Text> */}
                   <Button
-                    mt={4}
+                    mt={8}
                     backgroundColor={"brand.100"}
                     color={"white"}
                     borderRadius={"md"}
