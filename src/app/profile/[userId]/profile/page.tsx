@@ -27,13 +27,12 @@ const ChangePasswordPage = () => {
   });
   const [isMobile] = useMediaQuery("(max-width: 860px)");
 
-  
-
   const initialProfileValues: UserProfileValues = {
     first_name: data?.first_name || "",
     last_name: data?.last_name || "",
     email: data?.email || "",
-    phone_number: data?.phone_number || ""
+    phone_number: data?.phone_number || "",
+    // date_of_birth: data?.date_of_birth || ""
   };
 
   const handleChangePassword = async (
@@ -127,11 +126,11 @@ const ChangePasswordPage = () => {
                     styles={{ marginBottom: "1.5rem" }}
                   />
                   <FormField
+                    disabled
                     label="Email*"
                     name="email"
                     type="email"
                     placeholder="Enter your email"
-                    disabled={isSubmitting}
                     error={errors.email}
                     touched={touched.email}
                     styles={{ marginBottom: "1.5rem" }}
@@ -146,6 +145,16 @@ const ChangePasswordPage = () => {
                     touched={touched.phone_number}
                     styles={{ marginBottom: "1.5rem" }}
                   />
+                  {/* <FormField
+                    label="Date of Birth*"
+                    name="date_of_birth"
+                    type="date"
+                    placeholder="Select your date of birth"
+                    disabled={isSubmitting}
+                    error={errors.date_of_birth}
+                    touched={touched.date_of_birth}
+                    styles={{ marginBottom: "1.5rem" }}
+                  /> */}
                   <Button
                     type="submit"
                     variant="changePassword"

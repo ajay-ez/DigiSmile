@@ -12,7 +12,7 @@ interface Properties {
   label: string;
   name: string;
   placeholder?: string;
-  type?: "text" | "email" | "password" | "file";
+  type?: "text" | "email" | "password" | "file" | "date";
   error?: string;
   touched?: boolean;
   // eslint-disable-next-line no-unused-vars

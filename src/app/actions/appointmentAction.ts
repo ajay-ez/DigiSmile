@@ -139,6 +139,8 @@ export const BookQuickAppointmentAction = async (
       }
     );
     const jsonResponse = await apiResponse.json();
+    console.log('jsonResponse', jsonResponse);
+    
 
     if (apiResponse.status !== 201) throw jsonResponse;
 

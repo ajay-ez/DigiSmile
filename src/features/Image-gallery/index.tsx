@@ -7,7 +7,6 @@ import {
   gallery_1,
   gallery_2,
   gallery_3,
-  gallery_4,
   gallery_5,
   gallery_6,
   gallery_8
@@ -21,7 +20,6 @@ const images = [
   { id: 2, src: gallery_2, alt: "Image 2" },
   { id: 1, src: gallery_1, alt: "Image 1" },
   { id: 4, src: gallery_3, alt: "Image 3" },
-  { id: 4, src: gallery_4, alt: "Image 4" },
   { id: 5, src: gallery_5, alt: "Image 5" },
   { id: 6, src: gallery_6, alt: "Image 6" },
   { id: 8, src: gallery_8, alt: "Image 8" }

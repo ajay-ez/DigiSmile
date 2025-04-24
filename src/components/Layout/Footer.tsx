@@ -5,6 +5,8 @@ import Image from "next/image";
 import React from "react";
 import { Box, Button, Flex, Text, useMediaQuery } from "@chakra-ui/react";
 import { useRouter } from "next/navigation";
+import InstagramIconComponent from "@/app/Icons/InstagramIcon";
+import FacebookIconComponent from "@/app/Icons/FacebookIcon";
 
 const Footer = () => {
   const router = useRouter();
@@ -61,6 +63,14 @@ const Footer = () => {
               <Flex width={"100%"} flexDir={"column"} gap={2}>
                 <Text as={"h5"}>Smilexpertsdc@gmail.com</Text>
                 <Text as={"h5"}>(202) 545-6336</Text>
+                <Flex gap={2} mt={4}>
+                  <InstagramIconComponent click={() => {
+                    window.open("https://www.instagram.com/smile_experts_dental_dc?igsh=MzdpdXJvOXR0cTBq", "_blank");
+                  }}/>
+                  <FacebookIconComponent click={() => {
+                    window.open("https://www.facebook.com/smileexpertsdentaldc?mibextid=ZbWKwL", "_blank");
+                  }}/>
+                </Flex>
               </Flex>
               <Flex width={"100%"} flexDir={"column"} gap={2}>
                 <Text as={"h5"}>
@@ -111,6 +121,14 @@ const Footer = () => {
               <Flex width={"100%"} flexDir={"column"} gap={2}>
                 <Text as={"h5"}>Smilexpertsdc@gmail.com</Text>
                 <Text as={"h5"}>(571) 374-8000</Text>
+                <Flex gap={2} mt={4}>
+                  <InstagramIconComponent click={() => {
+                    window.open("https://www.instagram.com/smile_experts_dental_burke?igsh=eWM5MWdmaG9qMnJz ", "_blank");
+                  }}/>
+                  <FacebookIconComponent click={() => {
+                    window.open("https://www.facebook.com/share/16a7qzr8cX/", "_blank");
+                  }}/>
+                </Flex>
               </Flex>
               <Flex width={"100%"} flexDir={"column"} gap={2}>
                 <Text as={"h5"}>

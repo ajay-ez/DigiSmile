@@ -13,36 +13,36 @@ import QuickAppointmentIconComponent from "@/app/Icons/QuickAppointmentIcon";
 
 export const clinicServices = [
   {
-    heading: "Complete Exam",
+    heading: "Dental Checkup and Exam",
     time: "60-100 minutes",
     price: "starts at $349",
     value: "complete_exam",
     description:
-      "Combines both cleaning & whitening services for longer-lasting results. Plus free fluoride polish for added strength, protection, and the sparkliest smile."
+      "We thoroughly evaluate your overall dental health, which would include your jaw and bones, as well as your teeth and gums during your regularly scheduled examination."
+  },
+  {
+    heading: "Cosmetic Dentistry",
+    time: "60-100 minutes",
+    price: "starts at $349",
+    value: "teeth_whitening",
+    description:
+      "A beautiful smile is one of the most sought after cosmetic features in the world. People from all backgrounds and professions want a bright, straight smile, and we are here to help turn that desire into reality."
   },
   {
     heading: "Teeth Whitening",
     time: "60-100 minutes",
     price: "starts at $349",
-    value: "teeth_whitening",
-    description:
-      "Combines both cleaning & whitening services for longer-lasting results. Plus free fluoride polish for added strength, protection, and the sparkliest smile."
-  },
-  {
-    heading: "Regular Cleaning",
-    time: "60-100 minutes",
-    price: "starts at $349",
     value: "regular_cleaning",
     description:
-      "Combines both cleaning & whitening services for longer-lasting results. Plus free fluoride polish for added strength, protection, and the sparkliest smile."
+      "Your smile is the gate through which people will pass in order to get to know you better, and therefore, you should always present a radiant, self-confident and whiter smile to the public."
   },
   {
-    heading: "Tooth Repair",
+    heading: "Tooth colored filling",
     time: "60-100 minutes",
     price: "starts at $349",
     value: "tooth_repair",
     description:
-      "Combines both cleaning & whitening services for longer-lasting results. Plus free fluoride polish for added strength, protection, and the sparkliest smile."
+      "Tooth fillings are great solutions to dental decay or cavities,  You will not need to worry about discomfort and pain, because we will completely numb the area to be filled. You won’t feel a thing."
   }
 ];
 
