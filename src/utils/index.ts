@@ -26,7 +26,7 @@ export const clinicServices = [
     price: "starts at $349",
     value: "teeth_whitening",
     description:
-      "A beautiful smile is one of the most sought after cosmetic features in the world. People from all backgrounds and professions want a bright, straight smile, and we are here to help turn that desire into reality."
+      "A beautiful smile is one of the most sought after cosmetic features in the world. People from all backgrounds and professions want a straight smile, and we are here to help turn that desire into reality."
   },
   {
     heading: "Teeth Whitening",
