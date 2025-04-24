@@ -132,7 +132,7 @@ const LoginPage = () => {
           {isMobile && (
             <IoMdHome
               onClick={() => {
-                router.push("/home");
+                router.push("/");
               }}
               style={{
                 position: "absolute",

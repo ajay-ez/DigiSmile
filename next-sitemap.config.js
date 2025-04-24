@@ -7,8 +7,8 @@ module.exports = {
   priority: 0.7,
   transform: async (config, path) => ({
     loc: path,
-    changefreq: path === '/home' ? 'daily' : 'monthly',
-    priority: path === '/home' ? 1.0 : 0.7,
+    changefreq: path === '/' ? 'daily' : 'monthly',
+    priority: path === '/' ? 1.0 : 0.7,
     lastmod: new Date().toISOString(),
   }),
 };

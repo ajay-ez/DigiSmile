@@ -114,10 +114,10 @@ export default function Navbar() {
               SERVICES
             </Button>
             <Button variant={"header"}>
-              <Link href={"/home#home-location"}>LOCATIONS</Link>
+              <Link href={"/#home-location"}>LOCATIONS</Link>
             </Button>
             <Button variant={"header"}>
-              <Link href={"/home#footer-section"}>CONTACT US</Link>
+              <Link href={"/#footer-section"}>CONTACT US</Link>
             </Button>
             <Button
               variant={"header"}
@@ -334,7 +334,7 @@ export default function Navbar() {
             </ListItem>
             <ListItem marginY={2}>
               <Button variant={"header"}>
-                <Link href={"/home#footer-section"}>
+                <Link href={"/#footer-section"}>
                   <Text as={"h4"} fontWeight={"bold"}>
                     LOCATIONS
                   </Text>
@@ -351,7 +351,7 @@ export default function Navbar() {
             </ListItem>
             <ListItem marginY={2}>
               <Button variant={"header"}>
-                <Link href={"/home#footer-section"}>
+                <Link href={"/#footer-section"}>
                   <Text as={"h4"} fontWeight={"bold"}>
                     CONTACT US
                   </Text>

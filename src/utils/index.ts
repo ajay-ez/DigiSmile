@@ -115,7 +115,7 @@ export const appointmentLists = [
   {
     id: "0",
     name: "Home",
-    url: "/home",
+    url: "/",
     component: HomeIconComponent
   },
   {

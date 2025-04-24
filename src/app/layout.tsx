@@ -8,6 +8,8 @@ import AppWrappers from "./AppWrapper";
 import { Provider } from "react-redux";
 import store from "@/redux/store";
 import Head from "next/head";
+import { Box } from "@chakra-ui/react";
+import { toggleHeader } from "@/redux/SharedSlice";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -27,6 +29,8 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+
+
   return (
     <html lang="en">
       <Head>
@@ -52,7 +56,9 @@ export default function RootLayout({
         />
         <Suspense fallback={<div>Loading...</div>}>
           <Provider store={store}>
-            <AppWrappers>{children}</AppWrappers>
+            <AppWrappers>
+              {children}
+            </AppWrappers>
           </Provider>
         </Suspense>
       </body>

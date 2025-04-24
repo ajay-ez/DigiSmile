@@ -98,7 +98,7 @@ const SignupPage = () => {
             <Image
               src={digismileLogoImage}
               onClick={() => {
-                router.push("/home");
+                router.push("/");
               }}
               alt="logo"
               height={140}
@@ -136,7 +136,7 @@ const SignupPage = () => {
           {isMobile && (
             <IoMdHome
               onClick={() => {
-                router.push("/home");
+                router.push("/");
               }}
               style={{
                 position: "absolute",

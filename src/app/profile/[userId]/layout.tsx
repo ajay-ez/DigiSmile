@@ -137,7 +137,7 @@ const ProfileLayout = ({ children }: { children: React.ReactNode }) => {
   };
 
   const handleHomeRedirect = () => {
-    navigateToSection(`home`);
+    navigateToSection(`/`);
   };
 
   const handleChangePassword = () => {
