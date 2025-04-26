@@ -223,31 +223,6 @@ const AboutUsComponent = () => {
                   <>
                     <AccordionButton>
                       <Box as="h3" flex="1" textAlign="left">
-                        WE ARE HYGENISTS - LED
-                      </Box>
-                      {isExpanded ? <FaMinus /> : <FaPlus />}
-                    </AccordionButton>
-                    <AccordionPanel pb={4}>
-                      At The Smile Experts Dental Clinic, our Hygienists are the
-                      star of the show. In a world traditionally dominated by
-                      dentists, we&apos;re turning the model on its head,
-                      bringing the spotlight to these dental experts. Consider
-                      them your counterpart on your smile-care journey, someone
-                      who will get to know your mouth and develop customized
-                      plans around your goals, lifestyle, and comfort. This
-                      isn&apos;t a quick hi and bye&apos; interaction, this is
-                      someone who will support you at every visit and for the
-                      long haul. Without them, there is no us. And bonus: seeing
-                      them more means seeing your dentist less (wink wink).
-                    </AccordionPanel>
-                  </>
-                )}
-              </AccordionItem>
-              <AccordionItem>
-                {({ isExpanded }) => (
-                  <>
-                    <AccordionButton>
-                      <Box as="h3" flex="1" textAlign="left">
                         WE INNOVATE FOR THE BEST EXPERIENCE
                       </Box>
                       {isExpanded ? <FaMinus /> : <FaPlus />}
@@ -290,6 +265,71 @@ const AboutUsComponent = () => {
                       and habits (such as smoking, drinking wine/coffee, and
                       perio health), and ensure that you are safely guided and
                       properly taken care of during the whitening process.
+                    </AccordionPanel>
+                  </>
+                )}
+              </AccordionItem>
+              <AccordionItem>
+                {({ isExpanded }) => (
+                  <>
+                    <AccordionButton>
+                      <Box as="h3" flex="1" textAlign="left">
+                        How we treat patients at our clinic?
+                      </Box>
+                      {isExpanded ? <FaMinus /> : <FaPlus />}
+                    </AccordionButton>
+                    <AccordionPanel pb={4}>
+                      We are guided by internationally recognized dental ethics,
+                      ensuring every patient is treated with compassion,
+                      dignity, and without discrimination. Whether it&apos;s a
+                      routine check-up or a complex case, we focus on your
+                      comfort, needs, and overall well-being. Emergency care is
+                      always prioritized, and we maintain a supportive,
+                      respectful environment for all.
+                    </AccordionPanel>
+                  </>
+                )}
+              </AccordionItem>
+              <AccordionItem>
+                {({ isExpanded }) => (
+                  <>
+                    <AccordionButton>
+                      <Box as="h3" flex="1" textAlign="left">
+                        Is patient information confidential and how do you
+                        ensure professionalism?
+                      </Box>
+                      {isExpanded ? <FaMinus /> : <FaPlus />}
+                    </AccordionButton>
+                    <AccordionPanel pb={4}>
+                      Yes, your privacy is our top priority. All personal and
+                      medical information is handled with strict confidentiality
+                      and shared only when legally required. Our team follows
+                      ethical guidelines in every aspect of care—taking full
+                      responsibility for treatments, working only with qualified
+                      professionals, and ensuring every procedure meets legal
+                      and professional standards.
+                    </AccordionPanel>
+                  </>
+                )}
+              </AccordionItem>
+              <AccordionItem>
+                {({ isExpanded }) => (
+                  <>
+                    <AccordionButton>
+                      <Box as="h3" flex="1" textAlign="left">
+                        How do we stay current with dental advancements?
+                      </Box>
+                      {isExpanded ? <FaMinus /> : <FaPlus />}
+                    </AccordionButton>
+                    <AccordionPanel pb={4}>
+                      Our dentists &quot;Dr Andleeb Mahmood&quot; are committed to
+                      lifelong learning and regularly participate in continuing
+                      education to stay updated with the latest techniques and
+                      technologies. We combine modern science with a
+                      patient-first approach, so you receive care that is both
+                      advanced and personalized. We also actively promote oral
+                      health education and contribute to building a
+                      healthier community.
                     </AccordionPanel>
                   </>
                 )}
