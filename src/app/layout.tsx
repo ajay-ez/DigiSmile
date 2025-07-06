@@ -8,8 +8,6 @@ import AppWrappers from "./AppWrapper";
 import { Provider } from "react-redux";
 import store from "@/redux/store";
 import Head from "next/head";
-import { Box } from "@chakra-ui/react";
-import { toggleHeader } from "@/redux/SharedSlice";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -30,17 +28,47 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
 
-
   return (
     <html lang="en">
       <Head>
-        <title>Best General and Cosmetic Dentist in DMV Area</title>
+        <title>Best General and Cosmetic Dentist in DMV Area | DigiSmile</title>
         <meta 
           name="description" 
-          content="Looking for the best dentist in Washington DC, Burke VA, or the DMV area? Our affordable, family-friendly dental clinic offers general dentistry, teeth cleaning, dental checkups, root canal treatments, tooth extractions, fillings, and emergency dental care. We specialize in cosmetic dentistry, including veneers, teeth whitening, smile makeovers, Invisalign, clear braces, and dental implants. We also provide gentle pediatric dental care, including child tooth cleanings and extractions. Medicaid and low-cost options available. Visit the best dentist near you for a healthy, beautiful smile." 
+          content="Looking for the best dentist in Washington DC, Burke VA, or the DMV area? Our affordable, family-friendly dental clinic offers general dentistry, teeth cleaning, dental checkups, root canal treatments, tooth extractions, fillings, and emergency dental care." 
         />
+        
+        {/* Essential Meta Tags */}
+        <meta charSet="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="robots" content="index, follow" />
+        <meta name="theme-color" content="#ffffff" />
+        
+        {/* Canonical URL */}
+        {/* <link rel="canonical" href="https://yourclinicurl.com/" /> */}
+        
+        {/* Favicon */}
+        {/* <link rel="icon" href="/favicon.ico" sizes="any" />
+        <link rel="icon" href="/icon.svg" type="image/svg+xml" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        <link rel="manifest" href="/site.webmanifest" /> */}
+        
+        {/* Additional SEO */}
+        <meta name="keywords" content="dentist, dental clinic, teeth cleaning, cosmetic dentistry, dental implants, Invisalign, emergency dentist, pediatric dentist, DMV area, Washington DC, Burke VA" />
+        <meta name="geo.region" content="US-VA" />
+        <meta name="geo.placename" content="Burke" />
+        <meta name="geo.placename" content="Washington" />
       </Head>
-      <body className={`${poppins.className} ${dmSans.className}`}>
+      
+      {/* Google Analytics */}
+      <Script async src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GTAG}`} />
+      <Script id="google-analytics">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', '${process.env.NEXT_PUBLIC_GTAG}');
+        `}
+      </Script>
         <Script id="chatbot-config" strategy="beforeInteractive">
           {`
             window.embeddedChatbotConfig = {
@@ -54,6 +82,7 @@ export default function RootLayout({
           strategy="afterInteractive"
           defer
         />
+      <body className={`${poppins.className} ${dmSans.className}`}>
         <Suspense fallback={<div>Loading...</div>}>
           <Provider store={store}>
             <AppWrappers>
