@@ -121,6 +121,12 @@ export default function Navbar() {
             </Button>
             <Button
               variant={"header"}
+              onClick={() => navigateToSection("home/privacy-policy")}
+            >
+              PRIVACY POLICY
+            </Button>
+            <Button
+              variant={"header"}
               onClick={() => navigateToSection("home/new-patients")}
             >
               NEW PATIENTS
@@ -347,6 +353,14 @@ export default function Navbar() {
             >
               <Text as={"h4"} fontWeight={"bold"}>
                 NEW PATIENTS
+              </Text>
+            </ListItem>
+            <ListItem
+              onClick={() => navigateToSection("home/privacy-policy")}
+              marginY={2}
+            >
+              <Text as={"h4"} fontWeight={"bold"}>
+                PRIVACY POLICY
               </Text>
             </ListItem>
             <ListItem marginY={2}>
