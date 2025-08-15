@@ -37,7 +37,7 @@ const privacyPolicyPage = () => {
           width={"100%"}
         >
           <Text mt={8} as={"h4"}>
-            DigiSmile is committed to respecting and protecting your personal
+            smilexperts is committed to respecting and protecting your personal
             information. This Privacy Policy explains how we collect, use, and
             share information when you opt in to receive SMS messages from us.
           </Text>
@@ -77,7 +77,7 @@ const privacyPolicyPage = () => {
             Effective Date: April 23, 2025
           </Text>
           <Text as={"h4"} mt={2}>
-            By opting in to receive SMS messages from DigiSmile, you agree to
+            By opting in to receive SMS messages from smilexperts, you agree to
             the following terms:
           </Text>
 
@@ -86,7 +86,7 @@ const privacyPolicyPage = () => {
           </Text>
           <Text as={"h4"} mt={2}>
             By providing my phone number, I consent to receive SMS text messages
-            from DigiSmile for appointment reminders, marketing messages, and
+            from smilexperts for appointment reminders, marketing messages, and
             general two-way communication. Msg frequency varies. Msg & data
             rates may apply. Reply HELP for support. Reply STOP to opt out.
           </Text>
